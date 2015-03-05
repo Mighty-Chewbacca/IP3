@@ -1,12 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Alex'sScripts\UIControlScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Alex'sScripts\EconomyScript.cs" Line="9" Column="43" />
-      <File FileName="Assets\Scripts\Alex'sScripts\AddDonations.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Alex'sScripts\AddFood.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Alex'sScripts\UIControlScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Alex'sScripts\ValuesScript.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

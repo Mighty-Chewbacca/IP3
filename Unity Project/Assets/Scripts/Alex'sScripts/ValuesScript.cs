@@ -15,6 +15,8 @@ public class ValuesScript : MonoBehaviour
 
 	public float timeScale;
 
+	public static bool hungerIncreasing, thirstIncreasing, educationIncreasing;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -72,5 +74,15 @@ public class ValuesScript : MonoBehaviour
 		{
 			ValuesScript.donations = 0;
 		}
+	}
+
+	void setEducationIncreasing(bool newVal)
+	{
+		educationIncreasing = newVal;
+	}
+
+	bool getEducationIncreasing()
+	{
+		return educationIncreasing;
 	}
 }

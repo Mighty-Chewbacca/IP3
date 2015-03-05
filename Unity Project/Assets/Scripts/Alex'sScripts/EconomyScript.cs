@@ -21,11 +21,13 @@ public class EconomyScript : MonoBehaviour {
 		{
 			InvokeRepeating("IncreaseEducation", 0, ValuesScript.increaseTime);
 			isIncreasing = true;
+			BroadcastMessage("setEducationIncreasing", isIncreasing);
 		}
 		else if ((ValuesScript.hunger <= 50 || ValuesScript.thirst <= 50) && isIncreasing == true)
 		{
 			CancelInvoke("IncreaseEducation");
 			isIncreasing = false;
+			BroadcastMessage("setEducationIncreasing", isIncreasing);
 		}
 	}
 

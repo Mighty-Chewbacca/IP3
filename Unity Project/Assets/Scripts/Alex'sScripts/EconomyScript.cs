@@ -8,8 +8,8 @@ public class EconomyScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		InvokeRepeating ("DecreaseHunger", 10, ValuesScript.decreaseTime);
-		InvokeRepeating ("DecreaseThirst", 10, ValuesScript.decreaseTime);
+		InvokeRepeating ("DecreaseHunger", 1, ValuesScript.decreaseTime);
+		InvokeRepeating ("DecreaseThirst", 1, ValuesScript.decreaseTime);
 	
 	}
 	

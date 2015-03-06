@@ -46,14 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HouseControllerScript.cs" />
-     <Compile Include="Assets\ModelChangerScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddFood.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\EconomyScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\UIControlScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\ValuesScript.cs" />
-     <Compile Include="Assets\StatusTextScript.cs" />
+     <Compile Include="Assets\Scripts\HouseControllerScript.cs" />
+     <Compile Include="Assets\Scripts\ModelChangerScript.cs" />
+     <Compile Include="Assets\Scripts\StatusTextScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

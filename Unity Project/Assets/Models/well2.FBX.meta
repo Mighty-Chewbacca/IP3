@@ -1,13 +1,30 @@
 fileFormatVersion: 2
-guid: 8285271a6927b4044b5d43cba48ada73
+guid: 87fcb2d81db13ee42a5fab20dc87e0ad
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Shack v1 base
+    100000: w21
+    100002: w22
+    100004: w23
+    100006: w24
+    100008: //RootNode
+    400000: w21
+    400002: w22
+    400004: w23
+    400006: w24
+    400008: //RootNode
+    2300000: w21
+    2300002: w22
+    2300004: w23
+    2300006: w24
+    3300000: w21
+    3300002: w22
+    3300004: w23
+    3300006: w24
+    4300000: w21
+    4300002: w24
+    4300004: w23
+    4300006: w22
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -28,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

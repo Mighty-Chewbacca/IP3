@@ -3,11 +3,15 @@ using System.Collections;
 
 public class InputScript : MonoBehaviour 
 {
+	private Vector3 defaultLookAt, defaultPosition;
+	private Quaternion defaultRotation;
 
 	// Use this for initialization
 	void Start () 
 	{
-	
+		defaultLookAt = Camera.main.transform.forward;
+		defaultPosition = Camera.main.transform.position;
+		defaultRotation = Camera.main.transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -25,8 +29,28 @@ public class InputScript : MonoBehaviour
 					//do all hit detection for houses in here
 					//Destroy(hit.transform.gameObject);
 					Debug.Log("hit house");
+
+					foreach (Transform child in hit.transform.gameObject.transform)
+					{
+						Debug.Log("looping children");
+
+						if (child.gameObject.tag == "cameraPosition")
+						{
+							Camera.main.transform.position = child.transform.position;
+							Camera.main.transform.LookAt(hit.transform.gameObject.transform.position);
+							Debug.Log("attempted to change position of camera");
+						}
+					}
 				}
 			}
 		}
+	}
+
+	public void ResetCamPosition()
+	{
+		Debug.Log ("resetting position of camera");
+		Camera.main.transform.position = defaultPosition;
+		Camera.main.transform.LookAt(defaultLookAt);
+		Camera.main.transform.rotation = defaultRotation;
 	}
 }

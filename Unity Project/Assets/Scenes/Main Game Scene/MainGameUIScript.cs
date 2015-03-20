@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MainGameUIScript : MonoBehaviour {
@@ -6,7 +7,7 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator dialogueBox;
 	public Animator donationBox;
 	public Animator wellbeingButton;
-
+	
 	public void openFundraising()
 	{
 		dialogueBox.enabled = true;
@@ -61,6 +62,5 @@ public class MainGameUIScript : MonoBehaviour {
 		Vector2 position = transform.anchoredPosition;
 		position.y -= transform.rect.height;
 		transform.anchoredPosition = position;
-	}
-
+	}	
 }

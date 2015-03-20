@@ -19,23 +19,22 @@ public class UIControlScript : MonoBehaviour {
 	{
 		if (this.name == "ThirstValue") 
 		{
-			this.thisText.text = ValuesScript.thirst.ToString();
+			this.thisText.text = "Thirst Value: " + ValuesScript.thirst.ToString();
 		}
 
 		if (this.name == "HungerValue") 
 		{
-			this.thisText.text = ValuesScript.hunger.ToString();
+			this.thisText.text = "Hunger Value: " + ValuesScript.hunger.ToString();
 		}
 
 		if (this.name == "EducationLevel") 
 		{
-			this.thisText.text = ValuesScript.education.ToString();
+			this.thisText.text = "Education Level: " + ValuesScript.education.ToString();
 		}
 
 		if (this.name == "DonationsValue") 
 		{
 			this.thisText.text = ValuesScript.donations.ToString();
 		}
-	
 	}
 }

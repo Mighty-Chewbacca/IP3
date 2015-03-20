@@ -30,6 +30,6 @@ public class HouseControllerScript : MonoBehaviour
 	public void ChangeRandomHouse()
 	{
 		int random = Random.Range (0, (transform.childCount));
-		houses [random].SendMessage ("changeMesh");
+		houses [random].BroadcastMessage ("changeMesh");
 	}
 }

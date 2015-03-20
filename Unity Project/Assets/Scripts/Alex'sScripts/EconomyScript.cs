@@ -32,7 +32,7 @@ public class EconomyScript : MonoBehaviour
 		if (delayTime > 0)
 		{
 			delayTime -= Time.deltaTime;
-			Debug.Log(delayTime);
+			//Debug.Log(delayTime);
 		}
 		else
 		{
@@ -88,7 +88,7 @@ public class EconomyScript : MonoBehaviour
 //		ValuesScript.education += ValuesScript.IncreaseRateEducation;
 	}
 
-
+	#region get minutes hours and days
 	public float GetCurrentMinutes()
 	{
 		return currentMinutes;
@@ -103,4 +103,5 @@ public class EconomyScript : MonoBehaviour
 	{
 		return currentDays;
 	}
+	#endregion
 }

@@ -46,11 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animations\BuildingAnimationScript.cs" />
+     <Compile Include="Assets\Animations\ParticleControllerScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddFood.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\EconomyScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\HouseControllerScript.cs" />
+     <Compile Include="Assets\Scripts\Alex&apos;sScripts\InputScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\KidScript.cs" />
+     <Compile Include="Assets\Scripts\Alex&apos;sScripts\KidTrackerScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\ModelChangerScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\SchoolScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\StatusTextScript.cs" />

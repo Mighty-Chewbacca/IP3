@@ -13,6 +13,9 @@ public class ModelChangerScript : MonoBehaviour
 	public int currLevel = 1;
 	private MeshFilter currMesh;
 	private MeshRenderer currMaterial;
+
+	private float timer = 2.6f;
+	private bool isEmitting = false;
 	//private Texture2D currTexture;
 
 	// Use this for initialization
@@ -42,10 +45,25 @@ public class ModelChangerScript : MonoBehaviour
 			currMesh.mesh = level3Mesh;
 			currMaterial.material = level3Texture;
 		}
+
+		if (isEmitting == true)
+		{
+			if (timer > 0)
+			{
+				timer -= Time.deltaTime;
+			}
+			else 
+			{
+				currLevel++;
+				isEmitting = false;
+				timer = 2.6f;
+			}
+		}
 	}
 
 	public void changeMesh()
 	{
-		currLevel ++;
+		isEmitting = true;
+		this.BroadcastMessage ("PlayAnimation");
 	}
 }

@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Animations\BuildingAnimationScript.cs" />
      <Compile Include="Assets\Animations\ParticleControllerScript.cs" />
+     <Compile Include="Assets\Scenes\Main Game Scene\MainGameUIScript.cs" />
+     <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddFood.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\EconomyScript.cs" />

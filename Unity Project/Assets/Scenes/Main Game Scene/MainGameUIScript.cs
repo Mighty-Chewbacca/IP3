@@ -7,7 +7,8 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator dialogueBox;
 	public Animator donationBox;
 	public Animator wellbeingButton;
-	
+	public Animator buildingInfoBox;
+
 	public void openFundraising()
 	{
 		dialogueBox.enabled = true;
@@ -38,6 +39,19 @@ public class MainGameUIScript : MonoBehaviour {
 	{
 		donationBox.SetBool("isHidden", true);
 		Debug.Log("Donation Menu Box is Closed");
+	}
+
+	public void openInfo()
+	{
+		buildingInfoBox.enabled = true;
+		buildingInfoBox.SetBool("isHidden", false);
+		Debug.Log("buildingInfoBox Menu Box is Open");
+	}
+	
+	public void closeInfo()
+	{
+		buildingInfoBox.SetBool("isHidden", true);
+		Debug.Log("buildingInfoBox Menu Box is Closed");
 	}
 
 	public void toggleWellbeingButton()

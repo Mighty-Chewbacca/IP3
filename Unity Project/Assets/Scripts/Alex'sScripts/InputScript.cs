@@ -57,7 +57,7 @@ public class InputScript : MonoBehaviour
 						text5.text = currentBuilding.textBox5String;
 						text6.text = currentBuilding.textBox6String;
 
-						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
+						hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
 						foreach (Transform child in hit.transform.gameObject.transform) {
 							Debug.Log ("looping children");

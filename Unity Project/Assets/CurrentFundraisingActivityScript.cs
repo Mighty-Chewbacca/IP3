@@ -41,11 +41,6 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 			}
 		}
 	}
-	
-	public int getTimeToComplete()
-	{
-		return timeToCompleteActivity;
-	}
 
 	public void activateFundraising()
 	{
@@ -65,7 +60,7 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 
 	private void updateVals()
 	{
-		Debug.Log ("the current fundraising from the activity script"+StaticValuesScript.currentFundraising);
+		Debug.Log ("the current fundraising from the activity script" + StaticValuesScript.currentFundraising);
 		if (StaticValuesScript.currentFundraising == "Fetes")
 		{
 			Debug.Log("entered fetes timetocomplete setter");

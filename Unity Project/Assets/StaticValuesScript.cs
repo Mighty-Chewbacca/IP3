@@ -37,6 +37,8 @@ public class StaticValuesScript : MonoBehaviour
 		radioSpotCost = 11; radioSpotValue = 110; radioSpotTime = 11;
 		onlineAdsCost = 12; onlineAdsValue = 120; onlineAdsTime = 12;
 		newspaperAdsCost = 13; newspaperAdsValue = 130; newspaperAdsTime = 13;
+
+		currentFundraising = "temp";
 	}
 	
 	// Update is called once per frame

@@ -8,21 +8,23 @@ public class SchoolScript : MonoBehaviour
 
 	private int attendingPopulation;
 	private int mealsNeeded;
-	private int mealsStored;
-	private int drinksStored;
+	public int mealsStored;
+	public int drinksStored;
 	private int drinksNeeded;
 
 	// Use this for initialization
 	void Start () 
 	{
 		attendingPopulation = KidTrackerScript.attendingList.Count;
-		Debug.Log (attendingPopulation);
+		Debug.Log ("Attending Population" + attendingPopulation);
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 		mealsNeeded = attendingPopulation;
+		// check for the correct amount of meals every 24 hours - 96 ticks!
+
 	}
 
 	//add meals to the storage

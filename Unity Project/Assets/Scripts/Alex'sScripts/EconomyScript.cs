@@ -54,6 +54,10 @@ public class EconomyScript : MonoBehaviour
 			currentTicks += 1;
 			//Debug.Log(currentTicks);
 			// to tell how many hours have ticked simply get current ticks then stop it when x amount of ticks have passed!
+			//allow for multiple time speeds. - key part of complexity to economy
+			//for a week to pass it is 672 ticks - check for a new kid every week
+			//for a day to pas it is 96 ticks - check meals every day
+			//for an hour to pass it is 4 ticks - check the time left on donations and fundraising
 		}
 
 		//http://docs.unity3d.com/ScriptReference/MonoBehaviour.CancelInvoke.html

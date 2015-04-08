@@ -6,20 +6,20 @@ public class KidTrackerScript : MonoBehaviour
 	//this script is simply going to contain a list of every child in the village
 	//will be used by the school as well as the UI
 
-	public static ArrayList kidList, attendingList, notAttendingList;
+	public static ArrayList kidList = new ArrayList (), attendingList = new ArrayList (), notAttendingList = 	 new ArrayList ();
 	public int kidsAttending, kidsNotAttending, totalKids;
 
 	// Use this for initialization
 	void Start () 
 	{
-		kidList = new ArrayList ();
-		attendingList = new ArrayList ();
-		notAttendingList = new ArrayList ();
+//		kidList = new ArrayList ();
+//		attendingList = new ArrayList ();
+//		notAttendingList = new ArrayList ();
 
 		foreach(GameObject kid in GameObject.FindGameObjectsWithTag("Housing"))
 		{
 			kidList.Add(kid.GetComponent<KidScript>());
-			Debug.Log(kidList.Count);
+			//Debug.Log(kidList.Count);
 		}
 
 		updateLists ();
@@ -28,6 +28,7 @@ public class KidTrackerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		updateLists ();
 		kidsAttending = attendingList.Count;
 		kidsNotAttending = notAttendingList.Count;
 		totalKids = kidList.Count;
@@ -38,8 +39,7 @@ public class KidTrackerScript : MonoBehaviour
 	{
 		foreach (KidScript kid in kidList)
 		{
-
-			Debug.Log(kid.getGoingToSchool());
+			//Debug.Log(kid.getGoingToSchool());
 
 			if (kid.getGoingToSchool() == true)
 			{

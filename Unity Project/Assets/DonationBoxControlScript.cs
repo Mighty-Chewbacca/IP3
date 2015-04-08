@@ -19,11 +19,11 @@ public class DonationBoxControlScript : MonoBehaviour {
 	void Update () 
 	{
 		Debug.Log ( "static current fundraising before change" + StaticValuesScript.currentFundraising);
-		StaticValuesScript.currentFundraising = currentDonation;
 		Debug.Log (currentDonation);
 		Debug.Log ("static current fundraising after change" + StaticValuesScript.currentFundraising);
 		if (currentDonation == "Fetes")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "Fetes";
 			valueText.text = "Costs:" + StaticValuesScript.fetesCost.ToString() + " returns:" + StaticValuesScript.fetesValue.ToString();
 			descText.text = "Fetes desc";
@@ -32,6 +32,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "SponsoredChallenge")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "SponsoredChallenge";
 			valueText.text = "Costs:" + StaticValuesScript.sponsoredChallengeCost.ToString() + " returns:" + StaticValuesScript.sponsoredChallengeValue.ToString();
 			descText.text = "SponsoredChallenge desc";
@@ -40,6 +41,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "SponsoredFun")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "SponsoredFun";
 			valueText.text = "Costs:" + StaticValuesScript.sponsoredFunCost.ToString() + " returns:" + StaticValuesScript.sponsoredFunValue.ToString();
 			descText.text = "SponsoredFun desc";
@@ -48,6 +50,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "QuizNight")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "QuizNight";
 			valueText.text = "Costs:" + StaticValuesScript.quizNightCost.ToString() + " returns:" + StaticValuesScript.quizNightValue.ToString();
 			descText.text = "QuizNight desc";
@@ -56,6 +59,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "FashionShow")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "FashionShow";
 			valueText.text = "Costs:" + StaticValuesScript.fashionShowCost.ToString() + " returns:" + StaticValuesScript.fashionShowValue.ToString();
 			descText.text = "FashionShow desc";
@@ -64,6 +68,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "SupermarketBagPack")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "SupermarketBagPack";
 			valueText.text = "Costs:" + StaticValuesScript.supermarketBagPackCost.ToString() + " returns:" + StaticValuesScript.supermarketBagPackValue.ToString();
 			descText.text = "SupermarketBagPack desc";
@@ -72,6 +77,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "Raffles")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "Raffles";
 			valueText.text = "Costs:" + StaticValuesScript.rafflesCost.ToString() + " returns:" + StaticValuesScript.rafflesValue.ToString();
 			descText.text = "Raffles desc";
@@ -80,6 +86,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "NonUniformDay")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "NonUniformDay";
 			valueText.text = "Costs:" + StaticValuesScript.nonUniformDayCost.ToString() + " returns:" + StaticValuesScript.nonUniformDayValue.ToString();
 			descText.text = "NonUniformDay desc";
@@ -88,6 +95,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "BackpackChallenge")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "BackpackChallenge";
 			valueText.text = "Costs:" + StaticValuesScript.backpackProjectCost.ToString() + " returns:" + StaticValuesScript.backpackProjectValue.ToString();
 			descText.text = "BackpackChallenge desc";
@@ -96,6 +104,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "TVSpot")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "TVSpot";
 			valueText.text = "Costs:" + StaticValuesScript.tvSpotCost.ToString() + " returns:" + StaticValuesScript.tvSpotValue.ToString();
 			descText.text = "TVSpot desc";
@@ -104,6 +113,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "RadioSpot")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "RadioSpot";
 			valueText.text = "Costs:" + StaticValuesScript.radioSpotCost.ToString() + " returns:" + StaticValuesScript.radioSpotValue.ToString();
 			descText.text = "RadioSpot desc";
@@ -112,6 +122,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "OnlineAds")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "OnlineAds";
 			valueText.text = "Costs:" + StaticValuesScript.onlineAdsCost.ToString() + " returns:" + StaticValuesScript.onlineAdsValue.ToString();
 			descText.text = "OnlineAds desc";
@@ -120,6 +131,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 
 		if (currentDonation == "NewsPaperAds")
 		{
+			StaticValuesScript.currentFundraising = currentDonation;
 			nameText.text = "NewsPaperAds";
 			valueText.text = "Costs:" + StaticValuesScript.newspaperAdsCost.ToString() + " returns:" + StaticValuesScript.newspaperAdsValue.ToString();
 			descText.text = "NewsPaperAds desc";

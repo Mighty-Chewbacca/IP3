@@ -57,7 +57,7 @@ public class InputScript : MonoBehaviour
 						text5.text = currentBuilding.textBox5String;
 						text6.text = currentBuilding.textBox6String;
 
-						hit.transform.gameObject.SendMessage("changeMesh");
+						//hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
 						foreach (Transform child in hit.transform.gameObject.transform) {
 							Debug.Log ("looping children");
@@ -83,7 +83,7 @@ public class InputScript : MonoBehaviour
 						text5.text = currentBuilding.textBox5String;
 						text6.text = currentBuilding.textBox6String;
 
-						hit.transform.gameObject.SendMessage("changeMesh");
+						//hit.transform.gameObject.SendMessage("changeMesh");
 
 						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
@@ -104,7 +104,7 @@ public class InputScript : MonoBehaviour
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 
-						hit.transform.gameObject.SendMessage("changeMesh");
+						//hit.transform.gameObject.SendMessage("changeMesh");
 
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
@@ -132,7 +132,7 @@ public class InputScript : MonoBehaviour
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 
-						hit.transform.gameObject.SendMessage("changeMesh");
+						//hit.transform.gameObject.SendMessage("changeMesh");
 
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
@@ -163,5 +163,11 @@ public class InputScript : MonoBehaviour
 		Camera.main.transform.position = defaultPosition;
 		Camera.main.transform.LookAt (defaultLookAt);
 		Camera.main.transform.rotation = defaultRotation;
+	}
+
+
+	public void UpgradeCurrentBuilding()
+	{
+		currentBuilding.gameObject.SendMessage ("changeMesh");
 	}
 }

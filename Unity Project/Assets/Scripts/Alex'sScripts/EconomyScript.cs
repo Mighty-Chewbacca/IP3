@@ -8,7 +8,7 @@ public class EconomyScript : MonoBehaviour
 
 	//time variable
 	private int currentMinutes, currentDays, currentHours, currentTicks;
-	public float StartingDelayTime;
+	public float normalDelayTime, fastDelayTime, slowDelayTime, currentDelayTime;
 	private float delayTime;
 
 	//bool isIncreasing = false;
@@ -16,7 +16,8 @@ public class EconomyScript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		delayTime = StartingDelayTime;
+		currentDelayTime = normalDelayTime;
+		delayTime = currentDelayTime;
 		currentMinutes = 30;
 		currentHours = 8;
 		currentDays = 1;
@@ -50,7 +51,7 @@ public class EconomyScript : MonoBehaviour
 				currentHours = 0;
 			}
 
-			delayTime = StartingDelayTime;
+			delayTime = currentDelayTime;
 			currentTicks += 1;
 			//Debug.Log(currentTicks);
 			// to tell how many hours have ticked simply get current ticks then stop it when x amount of ticks have passed!
@@ -92,6 +93,24 @@ public class EconomyScript : MonoBehaviour
 	{
 //		Debug.Log ("increasing education");
 //		ValuesScript.education += ValuesScript.IncreaseRateEducation;
+	}
+
+	public void setFastTime()
+	{
+		currentDelayTime = fastDelayTime;
+		delayTime = currentDelayTime;
+	}
+
+	public void setSlowTime()
+	{
+		currentDelayTime = slowDelayTime;
+		delayTime = currentDelayTime;
+	}
+
+	public void setNormalTime()
+	{
+		currentDelayTime = normalDelayTime;
+		delayTime = currentDelayTime;
 	}
 
 	#region get minutes hours and days

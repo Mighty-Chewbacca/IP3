@@ -9,7 +9,8 @@ public class ModelChangerScript : MonoBehaviour
 	private int houseLevel = 1;
 	private float timer = 2.6f;
 	private bool isEmitting = false;
-	//private Texture2D currTexture;
+
+	private bool isAbleToUpgrade = false;
 
 	// Use this for initialization
 	void Start () 
@@ -47,6 +48,11 @@ public class ModelChangerScript : MonoBehaviour
 					GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier3"));
 					go.transform.position = this.transform.position;
 					go.transform.parent = this.transform;
+
+					Vector3 position = go.transform.position;
+					position.y += 42;
+					go.transform.position = position;
+
 					houseLevel ++;
 					foreach(Transform child in transform)
 					{

@@ -120,6 +120,32 @@ public class InputScript : MonoBehaviour
 							}
 						}
 					}
+
+					if (hit.transform.gameObject.tag == "church") {
+						//do all hit detection for houses in here
+						//Destroy(hit.transform.gameObject);
+						Debug.Log ("hit church");
+						myUIcontroller.openInfo();
+						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
+						
+						text1.text = currentBuilding.textBox1String;
+						text2.text = currentBuilding.textBox2String;
+						text3.text = currentBuilding.textBox3String;
+						text4.text = currentBuilding.textBox4String;
+						text5.text = currentBuilding.textBox5String;
+						text6.text = currentBuilding.textBox6String;
+						
+						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
+						//send the houses info, should be able to access it here in hit
+						foreach (Transform child in hit.transform.gameObject.transform) {
+							Debug.Log ("looping children");
+							if (child.gameObject.tag == "cameraPosition") {
+								Camera.main.transform.position = child.transform.position;
+								Camera.main.transform.LookAt (hit.transform.gameObject.transform.position);
+								Debug.Log ("attempted to change position of camera");
+							}
+						}
+					}
 				}
 			}
 		}

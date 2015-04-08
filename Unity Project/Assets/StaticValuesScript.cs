@@ -20,6 +20,8 @@ public class StaticValuesScript : MonoBehaviour
 	public static string currentFundraising;
 	public static bool isFundraisingActive;
 
+	public static string currentTimeSpeed;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,6 +41,7 @@ public class StaticValuesScript : MonoBehaviour
 		newspaperAdsCost = 13; newspaperAdsValue = 130; newspaperAdsTime = 13;
 
 		currentFundraising = "temp";
+		currentTimeSpeed = "Normal";
 	}
 	
 	// Update is called once per frame

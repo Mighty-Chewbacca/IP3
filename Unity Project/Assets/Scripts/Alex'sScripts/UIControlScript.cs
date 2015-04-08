@@ -36,5 +36,10 @@ public class UIControlScript : MonoBehaviour {
 		{
 			this.thisText.text = ValuesScript.donations.ToString();
 		}
+
+		if (this.name == "timeControlsText") 
+		{
+			this.thisText.text = "Current Speed: " + StaticValuesScript.currentTimeSpeed;
+		}
 	}
 }

@@ -99,18 +99,21 @@ public class EconomyScript : MonoBehaviour
 	{
 		currentDelayTime = fastDelayTime;
 		delayTime = currentDelayTime;
+		StaticValuesScript.currentTimeSpeed = "Fast";
 	}
 
 	public void setSlowTime()
 	{
 		currentDelayTime = slowDelayTime;
 		delayTime = currentDelayTime;
+		StaticValuesScript.currentTimeSpeed = "Slow";
 	}
 
 	public void setNormalTime()
 	{
 		currentDelayTime = normalDelayTime;
 		delayTime = currentDelayTime;
+		StaticValuesScript.currentTimeSpeed = "Normal";
 	}
 
 	#region get minutes hours and days

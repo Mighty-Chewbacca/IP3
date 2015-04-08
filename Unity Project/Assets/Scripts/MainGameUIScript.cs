@@ -9,6 +9,7 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator wellbeingButton;
 	public Animator buildingInfoBox;
 	public Animator donationDialogueBox;
+	public Animator optionsBox;
 
 	public void openFundraising()
 	{
@@ -61,6 +62,19 @@ public class MainGameUIScript : MonoBehaviour {
 	public void closeDonation()
 	{
 		donationBox.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+	}
+
+	public void openSettings()
+	{
+		optionsBox.enabled = true;
+		optionsBox.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
+	}
+	
+	public void closeSettings()
+	{
+		optionsBox.SetBool("isHidden", true);
 		//Debug.Log("Donation Menu Box is Closed");
 	}
 

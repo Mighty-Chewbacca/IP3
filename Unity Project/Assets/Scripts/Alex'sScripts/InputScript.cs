@@ -82,7 +82,9 @@ public class InputScript : MonoBehaviour
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
 						text6.text = currentBuilding.textBox6String;
-						
+
+						hit.transform.gameObject.SendMessage("changeMesh");
+
 						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
 						foreach (Transform child in hit.transform.gameObject.transform) {
@@ -101,7 +103,9 @@ public class InputScript : MonoBehaviour
 						Debug.Log ("hit well");
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
-						
+
+						hit.transform.gameObject.SendMessage("changeMesh");
+
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
 						text3.text = currentBuilding.textBox3String;
@@ -127,7 +131,9 @@ public class InputScript : MonoBehaviour
 						Debug.Log ("hit church");
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
-						
+
+						hit.transform.gameObject.SendMessage("changeMesh");
+
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
 						text3.text = currentBuilding.textBox3String;

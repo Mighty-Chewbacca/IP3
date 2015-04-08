@@ -31,20 +31,87 @@ public class ModelChangerScript : MonoBehaviour
 			{
 				if (houseLevel == 1)
 				{
-					GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier2"));
-					go.transform.position = this.transform.position;
-					go.transform.parent = this.transform;
-					houseLevel ++;
-					foreach(Transform child in transform)
+					if (gameObject.tag == "Housing")
 					{
-						if (child.gameObject.tag == "houseT1")
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier2"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+						houseLevel ++;
+						foreach(Transform child in transform)
 						{
-							Destroy(child.gameObject);
+							if (child.gameObject.tag == "houseT1")
+						{	
+								Destroy(child.gameObject);
+							}
+						}
+					}
+
+					if (gameObject.tag == "School")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/SchoolTier2"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+
+						Vector3 position = go.transform.position;
+						position.y += 205;
+						position.x += 20;
+						position.z += -88;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "schoolT1")
+							{	
+								Destroy(child.gameObject);
+							}
+						}
+					}
+
+					if (gameObject.tag == "well")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/WellTier2"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+						
+						Vector3 position = go.transform.position;
+						position.z += 40;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "wellT1")
+							{	
+								Destroy(child.gameObject);
+							}
+						}
+					}
+
+					if (gameObject.tag == "church")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/ChurchTier2"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+						
+						Vector3 position = go.transform.position;
+						position.z += 40;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "churchT1")
+							{	
+								Destroy(child.gameObject);
+							}
 						}
 					}
 				} 
 				else if (houseLevel == 2)
 				{
+					if (gameObject.tag == "Housing")
+					{
 					GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier3"));
 					go.transform.position = this.transform.position;
 					go.transform.parent = this.transform;
@@ -59,6 +126,71 @@ public class ModelChangerScript : MonoBehaviour
 						if (child.gameObject.tag == "houseT2")
 						{
 							Destroy(child.gameObject);
+						}
+					}
+					}
+
+					if (gameObject.tag == "School")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/SchoolTier3"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+
+						Vector3 position = go.transform.position;
+						position.y += 198;
+						position.x += 20;
+						position.z += -105;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "schoolT2")
+							{
+								Destroy(child.gameObject);
+							}
+						}
+					}
+
+					if (gameObject.tag == "well")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/WellTier3"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+						
+						Vector3 position = go.transform.position;
+						position.x += 20;
+						position.z += 20;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "wellT2")
+							{
+								Destroy(child.gameObject);
+							}
+						}
+					}
+
+					if (gameObject.tag == "church")
+					{
+						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/ChurchTier3"));
+						go.transform.position = this.transform.position;
+						go.transform.parent = this.transform;
+						
+						Vector3 position = go.transform.position;
+						position.x += 20;
+						position.z += 50;
+						go.transform.position = position;
+						
+						houseLevel ++;
+						foreach(Transform child in transform)
+						{
+							if (child.gameObject.tag == "churchT2")
+							{
+								Destroy(child.gameObject);
+							}
 						}
 					}
 				}

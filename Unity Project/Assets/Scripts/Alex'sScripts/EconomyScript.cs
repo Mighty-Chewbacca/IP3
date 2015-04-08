@@ -52,6 +52,8 @@ public class EconomyScript : MonoBehaviour
 
 			delayTime = StartingDelayTime;
 			currentTicks += 1;
+			//Debug.Log(currentTicks);
+			// to tell how many hours have ticked simply get current ticks then stop it when x amount of ticks have passed!
 		}
 
 		//http://docs.unity3d.com/ScriptReference/MonoBehaviour.CancelInvoke.html
@@ -89,19 +91,24 @@ public class EconomyScript : MonoBehaviour
 	}
 
 	#region get minutes hours and days
-	public float GetCurrentMinutes()
+	public int GetCurrentMinutes()
 	{
 		return currentMinutes;
 	}
 
-	public float GetCurrentHours()
+	public int GetCurrentHours()
 	{
 		return currentHours;
 	}
 
-	public float GetCurrentDays()
+	public int GetCurrentDays()
 	{
 		return currentDays;
+	}
+
+	public int GetCurrentTick()
+	{
+		return currentTicks;
 	}
 	#endregion
 }

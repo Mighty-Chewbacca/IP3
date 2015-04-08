@@ -34,6 +34,15 @@ public class StatusTextScript : MonoBehaviour {
 			this.thisText.text = "Education is not increasing";
 		}
 
+		if (this.name == "currentStatusText" && StaticValuesScript.isFundraisingActive) 
+		{
+			this.thisText.text = "Currently Fundraising:" + StaticValuesScript.currentFundraising;
+		}
+		if (this.name == "currentStatusText" && !StaticValuesScript.isFundraisingActive) 
+		{
+			this.thisText.text = "Not Currently Fundraising:";
+		}
+
 		if (this.name == "TimeText") 
 		{
 			if (mainEconomy.GetCurrentMinutes() == 0)

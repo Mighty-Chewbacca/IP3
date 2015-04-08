@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Animations\BuildingAnimationScript.cs" />
      <Compile Include="Assets\Animations\ParticleControllerScript.cs" />
+     <Compile Include="Assets\CurrentFundraisingActivityScript.cs" />
+     <Compile Include="Assets\DonationBoxControlScript.cs" />
      <Compile Include="Assets\Scenes\Main Game Scene\MainGameUIScript.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
@@ -65,6 +67,7 @@
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\UpgradeSchoolScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\UpgradeWellScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\ValuesScript.cs" />
+     <Compile Include="Assets\StaticValuesScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

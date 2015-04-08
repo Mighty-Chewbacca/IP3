@@ -9,6 +9,8 @@ public class SchoolScript : MonoBehaviour
 	private int attendingPopulation;
 	private int mealsNeeded;
 	private int mealsStored;
+	private int drinksStored;
+	private int drinksNeeded;
 
 	// Use this for initialization
 	void Start () 

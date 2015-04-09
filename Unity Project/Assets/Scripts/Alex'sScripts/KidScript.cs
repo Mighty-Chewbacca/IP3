@@ -6,7 +6,10 @@ public class KidScript : MonoBehaviour
 	//this script is going to represent a kid
 	//will hold wether or not the kid will be at school or not
 
-	private bool goingToSchool = false;
+	public bool goingToSchool = false;
+	private bool isFed = false;
+	private bool isWatered = false;
+	public bool fedYesterday, fedToday;
 
 	SchoolScript mySchool;
 
@@ -30,5 +33,25 @@ public class KidScript : MonoBehaviour
 	public void setGoingToSchool(bool newVal)
 	{
 		goingToSchool = newVal;
+	}
+
+	public void WasFedToday(bool wasfed)
+	{
+		fedToday = wasfed;
+	}
+
+	public void WasFedYesterday(bool wasfed)
+	{
+		fedYesterday = wasfed;
+	}
+
+	public bool getWasFedToday()
+	{
+		return fedToday;
+	}
+
+	public bool getWasFedYesterday()
+	{
+		return fedYesterday;
 	}
 }

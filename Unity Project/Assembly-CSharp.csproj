@@ -49,6 +49,7 @@
      <Compile Include="Assets\BuildingInfoScript.cs" />
      <Compile Include="Assets\CurrentFundraisingActivityScript.cs" />
      <Compile Include="Assets\DonationBoxControlScript.cs" />
+     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddFood.cs" />
@@ -61,9 +62,6 @@
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\SchoolScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\StatusTextScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\UIControlScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\UpgradeChurchScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\UpgradeSchoolScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\UpgradeWellScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\ValuesScript.cs" />
      <Compile Include="Assets\Scripts\BuildingAnimationScript.cs" />
      <Compile Include="Assets\Scripts\MainGameUIScript.cs" />

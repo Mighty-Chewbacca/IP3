@@ -11,6 +11,7 @@ public class InputScript : MonoBehaviour
 	private MainGameUIScript myUIcontroller;
 
 	private BuildingInfoScript currentBuilding;
+	private string currentHit = "none";
 
 	private Text text1, text2, text3, text4, text5, text6;
 
@@ -47,6 +48,7 @@ public class InputScript : MonoBehaviour
 						//do all hit detection for houses in here
 						//Destroy(hit.transform.gameObject);
 						Debug.Log ("hit house");
+						currentHit = "House";
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 
@@ -73,6 +75,7 @@ public class InputScript : MonoBehaviour
 						//do all hit detection for houses in here
 						//Destroy(hit.transform.gameObject);
 						Debug.Log ("hit school");
+						currentHit = "School";
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 						
@@ -101,6 +104,7 @@ public class InputScript : MonoBehaviour
 						//do all hit detection for houses in here
 						//Destroy(hit.transform.gameObject);
 						Debug.Log ("hit well");
+						currentHit = "Well";
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 
@@ -129,6 +133,7 @@ public class InputScript : MonoBehaviour
 						//do all hit detection for houses in here
 						//Destroy(hit.transform.gameObject);
 						Debug.Log ("hit church");
+						currentHit = "Church";
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
 
@@ -136,7 +141,9 @@ public class InputScript : MonoBehaviour
 
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
-						text3.text = currentBuilding.textBox3String;
+
+						//text3.text = currentBuilding.textBox3String;
+
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
 						text6.text = currentBuilding.textBox6String;
@@ -155,8 +162,22 @@ public class InputScript : MonoBehaviour
 				}
 			}
 		}
-	}
 
+		if (currentHit == "Church")
+		{
+
+			if (StaticValuesScript.isFundraisingActive) 
+			{
+				text3.text = "Currently Fundraising:" + StaticValuesScript.currentFundraising;
+			}
+			if (!StaticValuesScript.isFundraisingActive) 
+			{
+				text3.text = "Not Currently Fundraising:";
+			}
+			
+		}
+	}
+	
 	public void ResetCamPosition ()
 	{
 		Debug.Log ("resetting position of camera");

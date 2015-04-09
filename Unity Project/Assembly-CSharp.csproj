@@ -46,27 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BuildingInfoScript.cs" />
-     <Compile Include="Assets\CurrentFundraisingActivityScript.cs" />
-     <Compile Include="Assets\DonationBoxControlScript.cs" />
-     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddFood.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\EconomyScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\HouseControllerScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\InputScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\KidScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\KidTrackerScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\ModelChangerScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\SchoolScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\StatusTextScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\UIControlScript.cs" />
-     <Compile Include="Assets\Scripts\Alex&apos;sScripts\ValuesScript.cs" />
+     <Compile Include="Assets\Scripts\AddDonations.cs" />
+     <Compile Include="Assets\Scripts\AddFood.cs" />
      <Compile Include="Assets\Scripts\BuildingAnimationScript.cs" />
+     <Compile Include="Assets\Scripts\BuildingInfoScript.cs" />
+     <Compile Include="Assets\Scripts\CurrentFundraisingActivityScript.cs" />
+     <Compile Include="Assets\Scripts\DonationBoxControlScript.cs" />
+     <Compile Include="Assets\Scripts\EconomyScript.cs" />
+     <Compile Include="Assets\Scripts\HouseControllerScript.cs" />
+     <Compile Include="Assets\Scripts\IconFaceCameraScript.cs" />
+     <Compile Include="Assets\Scripts\InputScript.cs" />
+     <Compile Include="Assets\Scripts\KidScript.cs" />
+     <Compile Include="Assets\Scripts\KidTrackerScript.cs" />
      <Compile Include="Assets\Scripts\MainGameUIScript.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
+     <Compile Include="Assets\Scripts\ModelChangerScript.cs" />
      <Compile Include="Assets\Scripts\ParticleControllerScript.cs" />
-     <Compile Include="Assets\StaticValuesScript.cs" />
+     <Compile Include="Assets\Scripts\SchoolScript.cs" />
+     <Compile Include="Assets\Scripts\StaticValuesScript.cs" />
+     <Compile Include="Assets\Scripts\StatusTextScript.cs" />
+     <Compile Include="Assets\Scripts\UIControlScript.cs" />
+     <Compile Include="Assets\Scripts\ValuesScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

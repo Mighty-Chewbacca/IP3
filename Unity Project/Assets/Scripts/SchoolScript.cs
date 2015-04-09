@@ -6,30 +6,68 @@ public class SchoolScript : MonoBehaviour
 	//this script will represent the school that the kids will attend, it will have a population attending it
 	//it will also have hunger and thirst levels
 
-	private int attendingPopulation;
+	public int attendingPopulation, nonAttendingPopulation;
 	private int mealsNeeded;
 	public int mealsStored;
 	public int drinksStored;
 	private int drinksNeeded;
+	public bool eligableForNewPupil = true;
 
-	private int currentTick, desiredTick;
+	private int currentTick, desiredTickWeek, desiredTickDay;
 
 	private EconomyScript econ;
+	private KidTrackerScript kidTracker;
 
 	// Use this for initialization
 	void Start () 
 	{
 		econ = GameObject.Find("Main Camera").GetComponent<EconomyScript>();
+		kidTracker = GameObject.Find("Main Camera").GetComponent<KidTrackerScript>();
+
+		desiredTickWeek = 192; //now 2 days not week
+		desiredTickDay = 10;
 
 		attendingPopulation = KidTrackerScript.attendingList.Count;
 		Debug.Log ("Attending Population" + attendingPopulation);
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		attendingPopulation = kidTracker.kidsAttending;
+		nonAttendingPopulation = kidTracker.kidsNotAttending;
+		Debug.Log ("eligible for pupil   " + eligableForNewPupil);
 		currentTick = econ.GetCurrentTick();
+
+		if (currentTick == desiredTickWeek)
+		{
+			//check if the kids have all been fed
+			kidTracker.CheckIfSchoolEligable();
+			//if they have, enrol a new one
+			if (eligableForNewPupil)
+			{
+				kidTracker.getNewAttendee();
+			}
+
+			desiredTickWeek = currentTick += 192; // setting up the checking once every 2 days structure, will check at half 8 in the morning every 2 days
+		}
+
+		if (currentTick == desiredTickDay)
+		{
+			//check if there are enough meals for the kids today
+			kidTracker.CheckIfSchoolEligable();
+			kidTracker.checkKidsFood();
+
+			if (eligableForNewPupil)
+			{
+				kidTracker.getNewAttendee();
+			}
+			desiredTickDay = currentTick += 10; // setting up the checking once a day structure, will check at half 8 in the morning every day
+		}
+
 		mealsNeeded = attendingPopulation;
+		drinksNeeded = attendingPopulation;
 		// if a week has passed then check if we need to enrol another kid, 672 ticks in a week
 		// check for the correct amount of meals every 24 hours - 96 ticks!
 

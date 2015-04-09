@@ -12,9 +12,15 @@ public class SchoolScript : MonoBehaviour
 	public int drinksStored;
 	private int drinksNeeded;
 
+	private int currentTick, desiredTick;
+
+	private EconomyScript econ;
+
 	// Use this for initialization
 	void Start () 
 	{
+		econ = GameObject.Find("Main Camera").GetComponent<EconomyScript>();
+
 		attendingPopulation = KidTrackerScript.attendingList.Count;
 		Debug.Log ("Attending Population" + attendingPopulation);
 	}
@@ -22,7 +28,9 @@ public class SchoolScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		currentTick = econ.GetCurrentTick();
 		mealsNeeded = attendingPopulation;
+		// if a week has passed then check if we need to enrol another kid, 672 ticks in a week
 		// check for the correct amount of meals every 24 hours - 96 ticks!
 
 	}

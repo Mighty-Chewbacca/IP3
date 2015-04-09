@@ -4,26 +4,26 @@ using System.Collections;
 
 public class MainGameUIScript : MonoBehaviour {
 
-	public Animator dialogueBox;
-	public Animator donationBox;
+	public Animator fundraisingScrollBox;
+	public Animator donationSelectionBox;
 	public Animator wellbeingButton;
 	public Animator buildingInfoBox;
-	public Animator donationDialogueBox;
 	public Animator optionsBox;
+	public Animator aidScrollBox;
 
 	public void openFundraising()
 	{
 		if (StaticValuesScript.isFundraisingActive == false)
 		{
-			dialogueBox.enabled = true;
-			dialogueBox.SetBool("isHidden", false);
+			fundraisingScrollBox.enabled = true;
+			fundraisingScrollBox.SetBool("isHidden", false);
 			//Debug.Log("Fundraising Menu Box is Open");
 		}
 	}
 
 	public void closeFundraising()
 	{
-		dialogueBox.SetBool("isHidden", true);
+		fundraisingScrollBox.SetBool("isHidden", true);
 		//Debug.Log("Fundraising Menu Box is Closed");
 
 //		if(donationBox.enabled == true)
@@ -33,18 +33,18 @@ public class MainGameUIScript : MonoBehaviour {
 //		}
 	}
 
-	public void openDonations()
+	public void openDonation()
 	{
-		donationDialogueBox.enabled = true;
-		donationDialogueBox.SetBool("isHidden", false);
-		//Debug.Log("donationDialogueBox Menu Box is Open");
+		donationSelectionBox.enabled = true;
+		donationSelectionBox.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
 	}
-	
-	public void closeDonations()
+
+	public void closeDonation()
 	{
-		donationDialogueBox.SetBool("isHidden", true);
-		//Debug.Log("donationDialogueBox Menu Box is Closed");
-		
+		donationSelectionBox.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+
 		//		if(donationBox.enabled == true)
 		//		{
 		//			donationBox.SetBool("isHidden", true);
@@ -52,17 +52,15 @@ public class MainGameUIScript : MonoBehaviour {
 		//		}
 	}
 
-	public void openDonation()
+	public void openAid()
 	{
-		donationBox.enabled = true;
-		donationBox.SetBool("isHidden", false);
-		//Debug.Log("Donation Menu Box is Open");
+		aidScrollBox.enabled = true;
+		aidScrollBox.SetBool("isHidden", false);
 	}
 
-	public void closeDonation()
+	public void closeAid()
 	{
-		donationBox.SetBool("isHidden", true);
-		//Debug.Log("Donation Menu Box is Closed");
+	 	aidScrollBox.SetBool("isHidden", true);
 	}
 
 	public void openSettings()

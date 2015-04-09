@@ -10,6 +10,7 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator buildingInfoBox;
 	public Animator optionsBox;
 	public Animator aidScrollBox;
+	public Animator aidSelectionBox;
 
 	public void openFundraising()
 	{
@@ -61,6 +62,25 @@ public class MainGameUIScript : MonoBehaviour {
 	public void closeAid()
 	{
 	 	aidScrollBox.SetBool("isHidden", true);
+	}
+
+	public void openAidSelection()
+	{
+		aidSelectionBox.enabled = true;
+		aidSelectionBox.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
+	}
+	
+	public void closeAidSelection()
+	{
+		aidSelectionBox.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+		
+		//		if(donationBox.enabled == true)
+		//		{
+		//			donationBox.SetBool("isHidden", true);
+		//			Debug.Log("Fundraising Menu Box is Closed");
+		//		}
 	}
 
 	public void openSettings()

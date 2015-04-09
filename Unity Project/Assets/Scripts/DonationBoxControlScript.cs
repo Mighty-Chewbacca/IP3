@@ -18,177 +18,65 @@ public class DonationBoxControlScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Debug.Log ( "static current fundraising before change" + StaticValuesScript.currentFundraising);
+		Debug.Log ( "static current donation before change" + StaticValuesScript.currentDonation);
 		Debug.Log (currentDonation);
-		Debug.Log ("static current fundraising after change" + StaticValuesScript.currentFundraising);
-		if (currentDonation == "Fetes")
+		Debug.Log ("static current donation after change" + StaticValuesScript.currentDonation);
+
+		if (currentDonation == "SmallFood")
 		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "Fetes";
-			valueText.text = "Costs:" + StaticValuesScript.fetesCost.ToString() + " returns:" + StaticValuesScript.fetesValue.ToString();
-			descText.text = "Fetes desc";
-			timeText.text = "It will take " + StaticValuesScript.fetesTime.ToString() + " Hours";
+			StaticValuesScript.currentDonation = currentDonation;
+			nameText.text = "Small Food Package";
+			valueText.text = "Costs:" + StaticValuesScript.smallFoodCost.ToString() + " returns:" + StaticValuesScript.smallFoodValue.ToString() + " Meals";
+			descText.text = "food desc";
+			timeText.text = "It will take " + StaticValuesScript.smallFoodTime.ToString() + " Hours";
 		}
 
-		if (currentDonation == "SponsoredChallenge")
+		if (currentDonation == "MediumFood")
 		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "SponsoredChallenge";
-			valueText.text = "Costs:" + StaticValuesScript.sponsoredChallengeCost.ToString() + " returns:" + StaticValuesScript.sponsoredChallengeValue.ToString();
-			descText.text = "SponsoredChallenge desc";
-			timeText.text = "It will take " + StaticValuesScript.sponsoredChallengeTime.ToString() + " Hours";
+			StaticValuesScript.currentDonation = currentDonation;
+			nameText.text = "Medium Food Package";
+			valueText.text = "Costs:" + StaticValuesScript.medFoodCost.ToString() + " returns:" + StaticValuesScript.medFoodValue.ToString() + " Meals";
+			descText.text = "food desc";
+			timeText.text = "It will take " + StaticValuesScript.medFoodTime.ToString() + " Hours";
 		}
 
-		if (currentDonation == "SponsoredFun")
+		if (currentDonation == "LargeFood")
 		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "SponsoredFun";
-			valueText.text = "Costs:" + StaticValuesScript.sponsoredFunCost.ToString() + " returns:" + StaticValuesScript.sponsoredFunValue.ToString();
-			descText.text = "SponsoredFun desc";
-			timeText.text = "It will take " + StaticValuesScript.sponsoredFunTime.ToString() + " Hours";
+			StaticValuesScript.currentDonation = currentDonation;
+			nameText.text = "Large Food Package";
+			valueText.text = "Costs:" + StaticValuesScript.largeFoodCost.ToString() + " returns:" + StaticValuesScript.largeFoodValue.ToString() + " Meals";
+			descText.text = "food desc";
+			timeText.text = "It will take " + StaticValuesScript.largeFoodTime.ToString() + " Hours";
 		}
 
-		if (currentDonation == "QuizNight")
+		if (currentDonation == "EducationSupplies")
 		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "QuizNight";
-			valueText.text = "Costs:" + StaticValuesScript.quizNightCost.ToString() + " returns:" + StaticValuesScript.quizNightValue.ToString();
-			descText.text = "QuizNight desc";
-			timeText.text = "It will take " + StaticValuesScript.quizNightTime.ToString() + " Hours";
+			StaticValuesScript.currentDonation = currentDonation;
+			nameText.text = "Education Supplies Package";
+			valueText.text = "Costs:" + StaticValuesScript.educationSuppliesCost.ToString() + " returns:" + StaticValuesScript.educationSuppliesValue.ToString() + " Supplies";
+			descText.text = "These are used to upgrade your buildings!";
+			timeText.text = "It will take " + StaticValuesScript.educationSuppliesTime.ToString() + " Hours";
 		}
 
-		if (currentDonation == "FashionShow")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "FashionShow";
-			valueText.text = "Costs:" + StaticValuesScript.fashionShowCost.ToString() + " returns:" + StaticValuesScript.fashionShowValue.ToString();
-			descText.text = "FashionShow desc";
-			timeText.text = "It will take " + StaticValuesScript.fashionShowTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "SupermarketBagPack")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "SupermarketBagPack";
-			valueText.text = "Costs:" + StaticValuesScript.supermarketBagPackCost.ToString() + " returns:" + StaticValuesScript.supermarketBagPackValue.ToString();
-			descText.text = "SupermarketBagPack desc";
-			timeText.text = "It will take " + StaticValuesScript.supermarketBagPackTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "Raffles")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "Raffles";
-			valueText.text = "Costs:" + StaticValuesScript.rafflesCost.ToString() + " returns:" + StaticValuesScript.rafflesValue.ToString();
-			descText.text = "Raffles desc";
-			timeText.text = "It will take " + StaticValuesScript.rafflesTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "NonUniformDay")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "NonUniformDay";
-			valueText.text = "Costs:" + StaticValuesScript.nonUniformDayCost.ToString() + " returns:" + StaticValuesScript.nonUniformDayValue.ToString();
-			descText.text = "NonUniformDay desc";
-			timeText.text = "It will take " + StaticValuesScript.nonUniformDayTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "BackpackChallenge")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "BackpackChallenge";
-			valueText.text = "Costs:" + StaticValuesScript.backpackProjectCost.ToString() + " returns:" + StaticValuesScript.backpackProjectValue.ToString();
-			descText.text = "BackpackChallenge desc";
-			timeText.text = "It will take " + StaticValuesScript.backpackProjectTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "TVSpot")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "TVSpot";
-			valueText.text = "Costs:" + StaticValuesScript.tvSpotCost.ToString() + " returns:" + StaticValuesScript.tvSpotValue.ToString();
-			descText.text = "TVSpot desc";
-			timeText.text = "It will take " + StaticValuesScript.tvSpotTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "RadioSpot")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "RadioSpot";
-			valueText.text = "Costs:" + StaticValuesScript.radioSpotCost.ToString() + " returns:" + StaticValuesScript.radioSpotValue.ToString();
-			descText.text = "RadioSpot desc";
-			timeText.text = "It will take " + StaticValuesScript.radioSpotTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "OnlineAds")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "OnlineAds";
-			valueText.text = "Costs:" + StaticValuesScript.onlineAdsCost.ToString() + " returns:" + StaticValuesScript.onlineAdsValue.ToString();
-			descText.text = "OnlineAds desc";
-			timeText.text = "It will take " + StaticValuesScript.onlineAdsTime.ToString() + " Hours";
-		}
-
-		if (currentDonation == "NewsPaperAds")
-		{
-			StaticValuesScript.currentFundraising = currentDonation;
-			nameText.text = "NewsPaperAds";
-			valueText.text = "Costs:" + StaticValuesScript.newspaperAdsCost.ToString() + " returns:" + StaticValuesScript.newspaperAdsValue.ToString();
-			descText.text = "NewsPaperAds desc";
-			timeText.text = "It will take " + StaticValuesScript.newspaperAdsTime.ToString() + " Hours";
-		}
 	}
 
-	public void FetesDonation()
+	public void SmallFood()
 	{
-		currentDonation = "Fetes";
+		currentDonation = "SmallFood";
 	}
-	public void SponsoredChallengeDonation()
+
+	public void MedFood()
 	{
-		currentDonation = "SponsoredChallenge";
+		currentDonation = "MediumFood";
 	}
-	public void SponsoredFunDonation()
+
+	public void LargeFood()
 	{
-		currentDonation = "SponsoredFun";
+		currentDonation = "LargeFood";
 	}
-	public void QuizNightDonation()
+
+	public void EducationSupplies()
 	{
-		currentDonation = "QuizNight";
-	}
-	public void FashionShowDonation()
-	{
-		currentDonation = "FashionShow";
-	}
-	public void SupermarketBagPackDonation()
-	{
-		currentDonation = "SupermarketBagPack";
-	}
-	public void RafflesDonation()
-	{
-		currentDonation = "Raffles";
-	}
-	public void NonUniformDayDonation()
-	{
-		currentDonation = "NonUniformDay";
-	}
-	public void BackPackChallengeDonation()
-	{
-		currentDonation = "BackpackChallenge";
-	}
-	public void TVSpotDonation()
-	{
-		currentDonation = "TVSpot";
-	}
-	public void RadioSpotDonation()
-	{
-		currentDonation = "RadioSpot";
-	}
-	public void OnlineAdsDonation()
-	{
-		currentDonation = "OnlineAds";
-	}
-	public void NewspaperAdsDonation()
-	{
-		currentDonation = "NewsPaperAds";
+		currentDonation = "EducationSupplies";
 	}
 }

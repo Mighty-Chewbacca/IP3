@@ -3,22 +3,31 @@ using System.Collections;
 
 public class StaticValuesScript : MonoBehaviour 
 {
-	public static int fetesCost, fetesValue, fetesTime;
-	public static int sponsoredChallengeCost, sponsoredChallengeValue, sponsoredChallengeTime;
-	public static int sponsoredFunCost, sponsoredFunValue, sponsoredFunTime;
-	public static int quizNightCost, quizNightValue, quizNightTime;
+	//fundraising stuff
+	public static int sponsoredRunCost, sponsoredRunValue, sponsoredRunTime;
+	public static int sponsoredSilenceCost, sponsoredSilenceValue, sponsoredSilenceTime;
 	public static int fashionShowCost, fashionShowValue, fashionShowTime;
+	public static int nonUniformDayCost, nonUniformDayValue, nonUniformDayTime;
+	public static int crazyHairDayCost, crazyHairDayValue, crazyHairDayTime;
 	public static int supermarketBagPackCost, supermarketBagPackValue, supermarketBagPackTime;
 	public static int rafflesCost, rafflesValue, rafflesTime;
-	public static int nonUniformDayCost, nonUniformDayValue, nonUniformDayTime;
-	public static int backpackProjectCost, backpackProjectValue, backpackProjectTime;
-	public static int tvSpotCost, tvSpotValue, tvSpotTime;
 	public static int radioSpotCost, radioSpotValue, radioSpotTime;
+	public static int tvSpotCost, tvSpotValue, tvSpotTime;
 	public static int onlineAdsCost, onlineAdsValue, onlineAdsTime;
-	public static int newspaperAdsCost, newspaperAdsValue, newspaperAdsTime;
+	public static int backpackProjectCost, backpackProjectValue, backpackProjectTime;
+
+	//donation stuff
+	public static int smallFoodCost, smallFoodValue, smallFoodTime;
+	public static int medFoodCost, medFoodValue, medFoodTime;
+	public static int largeFoodCost, largeFoodValue, largeFoodTime;
+
+	public static int educationSuppliesCost, educationSuppliesValue, educationSuppliesTime;
 
 	public static string currentFundraising;
 	public static bool isFundraisingActive;
+
+	public static string currentDonation;
+	public static bool isDonationActive;
 
 	public static string currentTimeSpeed;
 
@@ -26,21 +35,31 @@ public class StaticValuesScript : MonoBehaviour
 	void Start () 
 	{
 		//initiate value of all statics - these are mainly the values that the donation events will be worth
-		fetesCost = 1; fetesValue = 10; fetesTime = 5;
-		sponsoredChallengeCost = 2; sponsoredChallengeValue = 20; sponsoredChallengeTime = 2;
-		sponsoredFunCost = 3; sponsoredFunValue = 30; sponsoredFunTime = 3;
-		quizNightCost = 4; quizNightValue = 40; quizNightTime = 4;
-		fashionShowCost = 5; fashionShowValue = 50; fashionShowTime = 5;
-		supermarketBagPackCost = 6; supermarketBagPackValue = 60; supermarketBagPackTime = 6;
-		rafflesCost = 7; rafflesValue = 70; rafflesTime = 7;
-		nonUniformDayCost = 8; nonUniformDayValue = 80; nonUniformDayTime = 8;
-		backpackProjectCost = 9; backpackProjectValue = 90; backpackProjectTime = 9;
-		tvSpotCost = 10; tvSpotValue = 100; tvSpotTime = 10;
-		radioSpotCost = 11; radioSpotValue = 110; radioSpotTime = 11;
-		onlineAdsCost = 12; onlineAdsValue = 120; onlineAdsTime = 12;
-		newspaperAdsCost = 13; newspaperAdsValue = 130; newspaperAdsTime = 13;
+
+		//fundraising stuff
+		sponsoredSilenceCost = 50; sponsoredSilenceValue = 150; sponsoredSilenceTime = 8;
+		sponsoredRunCost = 100; sponsoredRunValue = 200; sponsoredRunTime = 8;
+		fashionShowCost = 150; fashionShowValue = 300; fashionShowTime = 8;
+		nonUniformDayCost = 200; nonUniformDayValue = 350; nonUniformDayTime = 8;
+		crazyHairDayCost = 250; crazyHairDayValue = 450; crazyHairDayTime = 8;
+		supermarketBagPackCost = 300; supermarketBagPackValue = 500; supermarketBagPackTime = 8;
+		rafflesCost = 350; rafflesValue = 600; rafflesTime = 8;
+		radioSpotCost = 400; radioSpotValue = 650; radioSpotTime = 8;
+		tvSpotCost = 450; tvSpotValue = 700; tvSpotTime = 8;
+		onlineAdsCost = 500; onlineAdsValue = 750; onlineAdsTime = 8;
+		backpackProjectCost = 550; backpackProjectValue = 800; backpackProjectTime = 8;
+
+		//donation stuff
+		smallFoodCost = 150; smallFoodValue = 1; smallFoodTime = 10;
+		medFoodCost = 250; medFoodValue = 2; medFoodTime = 10;
+		largeFoodCost = 400; largeFoodValue = 3; largeFoodTime = 10;
+
+		educationSuppliesCost = 250; educationSuppliesValue = 5; educationSuppliesTime = 10;
+
+
 
 		currentFundraising = "temp";
+		currentDonation = "temp";
 		currentTimeSpeed = "Normal";
 	}
 	

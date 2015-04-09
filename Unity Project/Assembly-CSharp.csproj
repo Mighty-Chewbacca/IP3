@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CurrentDonationActivity.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\AddFood.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Scripts\CurrentFundraisingActivityScript.cs" />
      <Compile Include="Assets\Scripts\DonationBoxControlScript.cs" />
      <Compile Include="Assets\Scripts\EconomyScript.cs" />
+     <Compile Include="Assets\Scripts\FundraisingBoxControlScript.cs" />
      <Compile Include="Assets\Scripts\HouseControllerScript.cs" />
      <Compile Include="Assets\Scripts\IconFaceCameraScript.cs" />
      <Compile Include="Assets\Scripts\InputScript.cs" />

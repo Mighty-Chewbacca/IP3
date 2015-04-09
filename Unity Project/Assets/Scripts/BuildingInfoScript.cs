@@ -39,19 +39,38 @@ public class BuildingInfoScript : MonoBehaviour
 
 	}
 
-	public void CheckIfCanUpgrade()
+	public void CheckIfCanUpgrade ()
 	{
-		if(houseController.CheckHighestUpgrade() > myModelChanger.getHouseLevel() || houseController.CheckLowestUpgrade() == myModelChanger.getHouseLevel())
+		if (myModelChanger.gameObject.tag == "Housing") 
 		{
-			isUpgradable = true;
-			myUpgradeHalo.GetType().GetProperty("enabled").SetValue(myUpgradeHalo, true, null);
-			myIconRenderer.enabled = true;
+			if (houseController.CheckHighestUpgrade () > myModelChanger.getHouseLevel () || houseController.CheckLowestUpgrade () == myModelChanger.getHouseLevel ()) 
+			{	
+				isUpgradable = true;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);
+				myIconRenderer.enabled = true;
+			} 
+			else 
+			{
+				isUpgradable = false;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, false, null);
+				myIconRenderer.enabled = false;
+			}
+
 		}
 		else
 		{
-			isUpgradable = false;
-			myUpgradeHalo.GetType().GetProperty("enabled").SetValue(myUpgradeHalo, false, null);
-			myIconRenderer.enabled = false;
+			if (houseController.CheckLowestUpgrade() > myModelChanger.getHouseLevel())
+			{
+				isUpgradable = true;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);
+				myIconRenderer.enabled = true;
+			} 
+			else 
+			{
+				isUpgradable = false;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, false, null);
+				myIconRenderer.enabled = false;
+			}
 		}
 	}
 }

@@ -12,6 +12,7 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 	private int timeToCompleteActivity;
 	private int desiredTick;
 	private int payout;
+	private int cost;
 
 	// Use this for initialization
 	void Start () 
@@ -44,7 +45,7 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 
 	public void activateFundraising()
 	{
-		ValuesScript.donations -= 1000;
+		ValuesScript.donations -= cost;
 		CalculateDesiredTick ();
 		isActive = true;
 		StaticValuesScript.isFundraisingActive = true;
@@ -65,73 +66,72 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 		{
 			Debug.Log("the fundraising is null");
 		}
-		if (StaticValuesScript.currentFundraising == "Fetes")
+
+		if (StaticValuesScript.currentFundraising == "SponsoredSilence")
 		{
-			Debug.Log("entered fetes timetocomplete setter");
-			timeToCompleteActivity = StaticValuesScript.fetesTime;
-			payout = StaticValuesScript.fetesValue;
+			timeToCompleteActivity = StaticValuesScript.sponsoredSilenceTime;
+			payout = StaticValuesScript.sponsoredSilenceValue;
+			cost = StaticValuesScript.sponsoredSilenceCost;
 		}
-		if (StaticValuesScript.currentFundraising == "SponsoredChallenge")
+		if (StaticValuesScript.currentFundraising == "SponsoredRun")
 		{
-			timeToCompleteActivity = StaticValuesScript.sponsoredChallengeTime;
-			payout = StaticValuesScript.sponsoredChallengeValue;
-		}
-		if (StaticValuesScript.currentFundraising == "SponsoredFun")
-		{
-			timeToCompleteActivity = StaticValuesScript.sponsoredFunTime;
-			payout = StaticValuesScript.sponsoredFunValue;
-		}
-		if (StaticValuesScript.currentFundraising == "QuizNight")
-		{
-			timeToCompleteActivity = StaticValuesScript.quizNightTime;
-			payout = StaticValuesScript.quizNightValue;
+			timeToCompleteActivity = StaticValuesScript.sponsoredRunTime;
+			payout = StaticValuesScript.sponsoredRunValue;
+			cost = StaticValuesScript.sponsoredRunCost;
 		}
 		if (StaticValuesScript.currentFundraising == "FashionShow")
 		{
 			timeToCompleteActivity = StaticValuesScript.fashionShowTime;
 			payout = StaticValuesScript.fashionShowValue;
+			cost = StaticValuesScript.fashionShowCost;
 		}
 		if (StaticValuesScript.currentFundraising == "SupermarketBagPack")
 		{
 			timeToCompleteActivity = StaticValuesScript.supermarketBagPackTime;
 			payout = StaticValuesScript.supermarketBagPackValue;
+			cost = StaticValuesScript.supermarketBagPackCost;
 		}
 		if (StaticValuesScript.currentFundraising == "Raffles")
 		{
 			timeToCompleteActivity = StaticValuesScript.rafflesTime;
 			payout = StaticValuesScript.rafflesValue;
+			cost = StaticValuesScript.rafflesCost;
 		}
 		if (StaticValuesScript.currentFundraising == "NonUniformDay")
 		{
 			timeToCompleteActivity = StaticValuesScript.nonUniformDayTime;
 			payout = StaticValuesScript.nonUniformDayValue;
+			cost = StaticValuesScript.nonUniformDayCost;
 		}
 		if (StaticValuesScript.currentFundraising == "BackpackChallenge")
 		{
 			timeToCompleteActivity = StaticValuesScript.backpackProjectTime;
 			payout = StaticValuesScript.backpackProjectValue;
+			cost = StaticValuesScript.backpackProjectCost;
 		}
 		if (StaticValuesScript.currentFundraising == "TVSpot")
 		{
 			timeToCompleteActivity = StaticValuesScript.tvSpotTime;
 			payout = StaticValuesScript.tvSpotValue;
+			cost = StaticValuesScript.tvSpotCost;
 		}
 		if (StaticValuesScript.currentFundraising == "RadioSpot")
 		{
 			timeToCompleteActivity = StaticValuesScript.radioSpotTime;
 			payout = StaticValuesScript.radioSpotValue;
+			cost = StaticValuesScript.radioSpotCost;
 		}
 		if (StaticValuesScript.currentFundraising == "OnlineAds")
 		{
 			timeToCompleteActivity = StaticValuesScript.onlineAdsTime;
 			payout = StaticValuesScript.onlineAdsValue;
+			cost = StaticValuesScript.onlineAdsCost;
 		}
-		if (StaticValuesScript.currentFundraising == "NewsPaperAds")
+		if (StaticValuesScript.currentFundraising == "CrazyHair")
 		{
-			timeToCompleteActivity = StaticValuesScript.newspaperAdsValue;
-			payout = StaticValuesScript.newspaperAdsValue;
+			timeToCompleteActivity = StaticValuesScript.crazyHairDayTime;
+			payout = StaticValuesScript.crazyHairDayValue;
+			cost = StaticValuesScript.crazyHairDayCost;
 		}
-
-
 	}
 }

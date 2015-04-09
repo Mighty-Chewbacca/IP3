@@ -4,19 +4,15 @@ using System.Collections.Generic;
 
 public class HouseControllerScript : MonoBehaviour 
 {
-	public GameObject[] houses;
+	public ArrayList houseList = new ArrayList();
 	// Use this for initialization
 	void Start () 
 	{
-		houses = new GameObject[transform.childCount];
-		int i=0;
 		foreach(Transform child in transform)
 		{
 			if(child.tag =="Housing")
 			{
-			//houses[i] = child;
-			houses[i] = child.gameObject;
-			i++;
+				houseList.Add(child.GetComponent<ModelChangerScript>());
 			}
 		}
 	}
@@ -27,9 +23,38 @@ public class HouseControllerScript : MonoBehaviour
 
 	}
 
-	public void ChangeRandomHouse()
+	public int CheckHighestUpgrade()
 	{
-		int random = Random.Range (0, (transform.childCount));
-		houses [random].BroadcastMessage ("changeMesh");
+		int highestUpgrade = 0;
+		foreach (ModelChangerScript house in houseList)
+		{
+			if (house.getHouseLevel() > highestUpgrade)
+			{
+				highestUpgrade = house.getHouseLevel();
+			}
+		}
+
+		Debug.Log ("the highest upgrade is" + highestUpgrade);
+		return highestUpgrade;
+	}
+
+	public int CheckLowestUpgrade()
+	{
+		int lowestUpgrade = 1000;
+		foreach (ModelChangerScript house in houseList)
+		{
+			if (house.getHouseLevel() < lowestUpgrade)
+			{
+				lowestUpgrade = house.getHouseLevel();
+			}
+		}
+
+		Debug.Log ("the lowest upgrade is" + lowestUpgrade);
+		return lowestUpgrade;
+	}
+
+	public void CheckIfCanUpgrade()
+	{
+
 	}
 }

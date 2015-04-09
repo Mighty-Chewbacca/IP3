@@ -56,6 +56,8 @@ public class KidTrackerScript : MonoBehaviour
 			currentKid = notAttendingList [0] as KidScript;
 			notAttendingList.RemoveAt(0);
 			currentKid.setGoingToSchool (true);
+			currentKid.fedToday = true;
+			currentKid.fedYesterday = true;
 			attendingList.Add(currentKid);
 		}
 	}
@@ -119,20 +121,42 @@ public class KidTrackerScript : MonoBehaviour
 
 	public void CheckIfSchoolEligable ()
 	{
+		int kidCount = 0;
 
-		foreach (KidScript kid in attendingList) 
+		if (attendingList.Count != 0) 
 		{
-			if (attendingList.Count != 0) 
+//			foreach (KidScript kid in attendingList) 
+//			{
+//
+//				if (kid.fedToday == false && kid.fedYesterday == false) 
+//				{
+//					currSchool.eligableForNewPupil = false;
+//					break;
+//				} 
+//			}
+
+			foreach (KidScript kid in attendingList) 
 			{
-				if (kid.fedToday == false && kid.fedYesterday == false) 
+				
+				if (kid.fedToday == true && kid.fedYesterday == true) 
 				{
-					currSchool.eligableForNewPupil = false;
+					kidCount++;
 				} 
-				else 
-				{
-					currSchool.eligableForNewPupil = true;
-				}
 			}
+
+			if (kidCount == attendingList.Count)
+			{
+				currSchool.eligableForNewPupil = true;
+			}
+			else
+			{
+				currSchool.eligableForNewPupil = false;
+			}
+		}
+
+		if (attendingList.Count == 0)
+		{
+			currSchool.eligableForNewPupil = true;
 		}
 	}
 }

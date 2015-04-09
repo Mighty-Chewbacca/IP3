@@ -49,6 +49,7 @@
      <Compile Include="Assets\BuildingInfoScript.cs" />
      <Compile Include="Assets\CurrentFundraisingActivityScript.cs" />
      <Compile Include="Assets\DonationBoxControlScript.cs" />
+     <Compile Include="Assets\IconFaceCameraScript.cs" />
      <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\Alex&apos;sScripts\AddDonations.cs" />

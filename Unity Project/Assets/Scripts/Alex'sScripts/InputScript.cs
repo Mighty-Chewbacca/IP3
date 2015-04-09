@@ -14,6 +14,7 @@ public class InputScript : MonoBehaviour
 	private string currentHit = "none";
 
 	private Text text1, text2, text3, text4, text5, text6;
+	private Button upgradeButton;
 
 	// Use this for initialization
 	void Start ()
@@ -24,6 +25,8 @@ public class InputScript : MonoBehaviour
 
 		myEventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
 		myUIcontroller = GameObject.Find ("ManiSceneUIManager").GetComponent<MainGameUIScript> ();
+
+		upgradeButton = GameObject.Find ("upgradeButton").GetComponent<Button> ();
 
 		text1 = GameObject.Find ("buildingTB1").GetComponent<Text> ();
 		text2 = GameObject.Find ("buildingTB2").GetComponent<Text> ();
@@ -175,6 +178,18 @@ public class InputScript : MonoBehaviour
 				text3.text = "Not Currently Fundraising:";
 			}
 			
+		}
+
+		if (currentBuilding != null) 
+		{
+			if (currentBuilding.isUpgradable) 
+			{
+				upgradeButton.interactable = true;
+			} 
+			else 
+			{
+				upgradeButton.interactable = false;
+			}
 		}
 	}
 	

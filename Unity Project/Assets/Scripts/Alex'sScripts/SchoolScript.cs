@@ -37,7 +37,7 @@ public class SchoolScript : MonoBehaviour
 	{
 		attendingPopulation = kidTracker.kidsAttending;
 		nonAttendingPopulation = kidTracker.kidsNotAttending;
-
+		Debug.Log ("eligible for pupil   " + eligableForNewPupil);
 		currentTick = econ.GetCurrentTick();
 
 		if (currentTick == desiredTickWeek)
@@ -56,6 +56,7 @@ public class SchoolScript : MonoBehaviour
 		if (currentTick == desiredTickDay)
 		{
 			//check if there are enough meals for the kids today
+			kidTracker.CheckIfSchoolEligable();
 			kidTracker.checkKidsFood();
 
 			if (eligableForNewPupil)

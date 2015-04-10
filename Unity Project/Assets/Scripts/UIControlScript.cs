@@ -6,31 +6,25 @@ public class UIControlScript : MonoBehaviour {
 	
 	Text thisText;
 
+	ModelChangerScript church, well, school;
+
 	// Use this for initialization
 	void Start () 
 	{
 	//we want to grab the ui stuff for right now, instead of focusing on the world at the minute
 		thisText = GetComponent<Text>();
+
+		church = GameObject.Find ("Church").GetComponent<ModelChangerScript> ();
+
+		well = GameObject.Find ("Wells").GetComponent<ModelChangerScript> ();
+
+		school = GameObject.Find ("School").GetComponent<ModelChangerScript> ();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (this.name == "ThirstValue") 
-		{
-			this.thisText.text = "Thirst Value: " + ValuesScript.thirst.ToString();
-		}
-
-		if (this.name == "HungerValue") 
-		{
-			this.thisText.text = "Hunger Value: " + ValuesScript.hunger.ToString();
-		}
-
-		if (this.name == "EducationLevel") 
-		{
-			this.thisText.text = "Education Level: " + ValuesScript.education.ToString();
-		}
 
 		if (this.name == "DonationsValue") 
 		{
@@ -40,6 +34,21 @@ public class UIControlScript : MonoBehaviour {
 		if (this.name == "timeControlsText") 
 		{
 			this.thisText.text = "Current Speed: " + StaticValuesScript.currentTimeSpeed;
+		}
+
+		if (this.name == "SchoolLevel") 
+		{
+			this.thisText.text = "Current Level: " + school.getHouseLevel().ToString();
+		}
+
+		if (this.name == "wellLevel") 
+		{
+			this.thisText.text = "Current Level: " + well.getHouseLevel().ToString();
+		}
+
+		if (this.name == "churchLevel") 
+		{
+			this.thisText.text = "Current Level: " + church.getHouseLevel().ToString();
 		}
 	}
 }

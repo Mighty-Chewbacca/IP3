@@ -10,13 +10,17 @@ public class InputScript : MonoBehaviour
 	private UnityEngine.EventSystems.EventSystem myEventSystem;
 	private MainGameUIScript myUIcontroller;
 
-	private BuildingInfoScript currentBuilding;
+	private BuildingInfoScript currentBuilding = null;
 	private string currentHit = "none";
 
 	private SchoolScript mySchool;
+	private KidScript myKid;
+	private ModelChangerScript schoolChanger;
 
 	private Text text1, text2, text3, text4, text5, text6;
 	private Button upgradeButton;
+
+	private Button story1Button, story2Button;
 
 	// Use this for initialization
 	void Start ()
@@ -26,10 +30,16 @@ public class InputScript : MonoBehaviour
 		defaultRotation = Camera.main.transform.rotation;
 
 		mySchool = GameObject.Find ("School").GetComponent<SchoolScript> ();
+		schoolChanger = GameObject.Find ("School").GetComponent<ModelChangerScript> ();
 		myEventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
 		myUIcontroller = GameObject.Find ("ManiSceneUIManager").GetComponent<MainGameUIScript> ();
 
 		upgradeButton = GameObject.Find ("upgradeButton").GetComponent<Button> ();
+		story1Button = GameObject.Find ("story1Button").GetComponent<Button> ();
+		story2Button = GameObject.Find ("story2Button").GetComponent<Button> ();
+
+		story1Button.interactable = false;
+		story2Button.interactable = false;
 
 		text1 = GameObject.Find ("buildingTB1").GetComponent<Text> ();
 		text2 = GameObject.Find ("buildingTB2").GetComponent<Text> ();
@@ -42,6 +52,13 @@ public class InputScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
+		if (schoolChanger.getHouseLevel() >1)
+			story1Button.interactable = true;
+
+		if (schoolChanger.getHouseLevel() >2)
+			story2Button.interactable = true;
+
 		if (Input.GetMouseButtonDown (0)) 
 		{
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -60,13 +77,10 @@ public class InputScript : MonoBehaviour
 						currentHit = "House";
 						myUIcontroller.openInfo();
 						currentBuilding = hit.transform.gameObject.GetComponent<BuildingInfoScript>();
-						KidScript currKid = currentBuilding.GetComponent<KidScript>();
+						myKid = currentBuilding.GetComponent<KidScript>();
 
 						text1.text = currentBuilding.textBox1String;
 						text2.text = currentBuilding.textBox2String;
-
-						text3.text =  "Attending School?  " + currKid.getGoingToSchool().ToString();
-
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
 
@@ -200,6 +214,14 @@ public class InputScript : MonoBehaviour
 			text3.text = "No. meals needed: " + mySchool.attendingPopulation;
 			text4.text = "No. meals stored: " + mySchool.mealsStored;
 			text5.text = "No. of Education Supplies: " + mySchool.educationSupplies;
+		}
+
+		if (currentHit == "House")
+		{
+
+			text3.text = "Going to school? " + myKid.goingToSchool.ToString();
+
+			text5.text = "Fed Today? " + myKid.fedToday;
 		}
 
 		if (currentBuilding != null) 

@@ -11,6 +11,8 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator optionsBox;
 	public Animator aidScrollBox;
 	public Animator aidSelectionBox;
+	public Animator story1Animator;
+	public Animator story2Animator;
 
 	public void openFundraising()
 	{
@@ -93,6 +95,32 @@ public class MainGameUIScript : MonoBehaviour {
 	public void closeSettings()
 	{
 		optionsBox.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+	}
+
+	public void openStory1()
+	{
+		story1Animator.enabled = true;
+		story1Animator.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
+	}
+	
+	public void closeStory1()
+	{
+		story1Animator.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+	}
+
+	public void openStory2()
+	{
+		story2Animator.enabled = true;
+		story2Animator.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
+	}
+	
+	public void closeStory2()
+	{
+		story2Animator.SetBool("isHidden", true);
 		//Debug.Log("Donation Menu Box is Closed");
 	}
 

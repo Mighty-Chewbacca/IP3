@@ -25,7 +25,7 @@ public class SchoolScript : MonoBehaviour
 		kidTracker = GameObject.Find("Main Camera").GetComponent<KidTrackerScript>();
 
 		desiredTickWeek = 192; //now 2 days not week
-		desiredTickDay = 10;
+		desiredTickDay = 96;
 
 		attendingPopulation = KidTrackerScript.attendingList.Count;
 		Debug.Log ("Attending Population" + attendingPopulation);
@@ -63,7 +63,7 @@ public class SchoolScript : MonoBehaviour
 			{
 				kidTracker.getNewAttendee();
 			}
-			desiredTickDay = currentTick += 10; // setting up the checking once a day structure, will check at half 8 in the morning every day
+			desiredTickDay = currentTick += 96; // setting up the checking once a day structure, will check at half 8 in the morning every day
 		}
 
 		mealsNeeded = attendingPopulation;

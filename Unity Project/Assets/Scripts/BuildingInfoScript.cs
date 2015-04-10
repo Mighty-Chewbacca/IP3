@@ -69,7 +69,7 @@ public class BuildingInfoScript : MonoBehaviour
 			}
 
 		}
-		else
+		else  if (myModelChanger.gameObject.tag == "church" || myModelChanger.gameObject.tag == "well")
 		{
 			if(myModelChanger.getHouseLevel() == 1)
 				currentUpgradeCost = StaticValuesScript.level2UpgradeCost;
@@ -78,6 +78,31 @@ public class BuildingInfoScript : MonoBehaviour
 			else{currentUpgradeCost = 5000;} // stop them upgrading past 3
 
 			if (houseController.CheckLowestUpgrade() > myModelChanger.getHouseLevel() && mySchool.educationSupplies >= currentUpgradeCost && mySchool.eligableForNewPupil == true)
+			{
+				isUpgradable = true;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);
+				myIconRenderer.enabled = true;
+			} 
+			else 
+			{
+				isUpgradable = false;
+				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, false, null);
+				myIconRenderer.enabled = false;
+			}
+		}
+		else  if (myModelChanger.gameObject.tag == "School")
+		{
+			ModelChangerScript theWell = GameObject.Find ("Wells").GetComponent<ModelChangerScript>();
+			ModelChangerScript theChurch = GameObject.Find ("Church").GetComponent<ModelChangerScript>();
+
+			if(myModelChanger.getHouseLevel() == 1)
+				currentUpgradeCost = StaticValuesScript.level2UpgradeCost;
+			else if(myModelChanger.getHouseLevel() == 2)
+				currentUpgradeCost = StaticValuesScript.level3UpgradeCost;
+			else{currentUpgradeCost = 5000;} // stop them upgrading past 3
+			
+			if (houseController.CheckLowestUpgrade() > myModelChanger.getHouseLevel() && mySchool.educationSupplies >= currentUpgradeCost && mySchool.eligableForNewPupil == true
+			    && theWell.getHouseLevel() > myModelChanger.getHouseLevel() && theChurch.getHouseLevel() > myModelChanger.getHouseLevel())
 			{
 				isUpgradable = true;
 				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);

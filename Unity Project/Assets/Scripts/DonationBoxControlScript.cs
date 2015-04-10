@@ -28,7 +28,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 			nameText.text = "Small Food Package";
 			valueText.text = "Costs:" + StaticValuesScript.smallFoodCost.ToString() + " returns:" + StaticValuesScript.smallFoodValue.ToString() + " Meals";
 			descText.text = "food desc";
-			timeText.text = "It will take " + StaticValuesScript.smallFoodTime.ToString() + " Hours";
+			timeText.text = "It will take " + (StaticValuesScript.smallFoodTime / 4).ToString() + " Hours";
 		}
 
 		if (currentDonation == "MediumFood")
@@ -37,7 +37,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 			nameText.text = "Medium Food Package";
 			valueText.text = "Costs:" + StaticValuesScript.medFoodCost.ToString() + " returns:" + StaticValuesScript.medFoodValue.ToString() + " Meals";
 			descText.text = "food desc";
-			timeText.text = "It will take " + StaticValuesScript.medFoodTime.ToString() + " Hours";
+			timeText.text = "It will take " + (StaticValuesScript.medFoodTime / 4).ToString() + " Hours";
 		}
 
 		if (currentDonation == "LargeFood")
@@ -46,7 +46,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 			nameText.text = "Large Food Package";
 			valueText.text = "Costs:" + StaticValuesScript.largeFoodCost.ToString() + " returns:" + StaticValuesScript.largeFoodValue.ToString() + " Meals";
 			descText.text = "food desc";
-			timeText.text = "It will take " + StaticValuesScript.largeFoodTime.ToString() + " Hours";
+			timeText.text = "It will take " + (StaticValuesScript.largeFoodTime / 4).ToString() + " Hours";
 		}
 
 		if (currentDonation == "EducationSupplies")
@@ -55,7 +55,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 			nameText.text = "Education Supplies Package";
 			valueText.text = "Costs:" + StaticValuesScript.educationSuppliesCost.ToString() + " returns:" + StaticValuesScript.educationSuppliesValue.ToString() + " Supplies";
 			descText.text = "These are used to upgrade your buildings!";
-			timeText.text = "It will take " + StaticValuesScript.educationSuppliesTime.ToString() + " Hours";
+			timeText.text = "It will take " + (StaticValuesScript.educationSuppliesTime / 4).ToString() + " Hours";
 		}
 
 	}

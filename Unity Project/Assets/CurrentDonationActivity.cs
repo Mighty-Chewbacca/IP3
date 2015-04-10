@@ -38,7 +38,14 @@ public class CurrentDonationActivity : MonoBehaviour
 			{
 				//Debug.Log("desired tick reached");
 				//Debug.Log(currTick);
-				mySchool.mealsStored += payout; 
+				if (StaticValuesScript.currentDonation != "EducationSupplies")
+				{
+					mySchool.mealsStored += payout;
+				}
+				else
+				{
+					mySchool.educationSupplies += payout;
+				}
 				isActive = false;
 				StaticValuesScript.isDonationActive = false;
 			}

@@ -125,16 +125,6 @@ public class KidTrackerScript : MonoBehaviour
 
 		if (attendingList.Count != 0) 
 		{
-//			foreach (KidScript kid in attendingList) 
-//			{
-//
-//				if (kid.fedToday == false && kid.fedYesterday == false) 
-//				{
-//					currSchool.eligableForNewPupil = false;
-//					break;
-//				} 
-//			}
-
 			foreach (KidScript kid in attendingList) 
 			{
 				

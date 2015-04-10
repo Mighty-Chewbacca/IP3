@@ -13,6 +13,8 @@ public class InputScript : MonoBehaviour
 	private BuildingInfoScript currentBuilding;
 	private string currentHit = "none";
 
+	private SchoolScript mySchool;
+
 	private Text text1, text2, text3, text4, text5, text6;
 	private Button upgradeButton;
 
@@ -23,6 +25,7 @@ public class InputScript : MonoBehaviour
 		defaultPosition = Camera.main.transform.position;
 		defaultRotation = Camera.main.transform.rotation;
 
+		mySchool = GameObject.Find ("School").GetComponent<SchoolScript> ();
 		myEventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
 		myUIcontroller = GameObject.Find ("ManiSceneUIManager").GetComponent<MainGameUIScript> ();
 
@@ -66,7 +69,6 @@ public class InputScript : MonoBehaviour
 
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
-						text6.text = currentBuilding.textBox6String;
 
 						//hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
@@ -93,7 +95,6 @@ public class InputScript : MonoBehaviour
 						text3.text = currentBuilding.textBox3String;
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
-						text6.text = currentBuilding.textBox6String;
 
 						//hit.transform.gameObject.SendMessage("changeMesh");
 
@@ -124,7 +125,6 @@ public class InputScript : MonoBehaviour
 						text3.text = currentBuilding.textBox3String;
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
-						text6.text = currentBuilding.textBox6String;
 						
 						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
@@ -155,7 +155,6 @@ public class InputScript : MonoBehaviour
 
 						text4.text = currentBuilding.textBox4String;
 						text5.text = currentBuilding.textBox5String;
-						text6.text = currentBuilding.textBox6String;
 						
 						//this code will send the model change message, need this for talking to object hit.transform.gameObject.SendMessage("changeMesh");
 						//send the houses info, should be able to access it here in hit
@@ -195,6 +194,14 @@ public class InputScript : MonoBehaviour
 			
 		}
 
+		if (currentHit == "School")
+		{
+			text2.text = "No. of Pupils: " + mySchool.attendingPopulation;
+			text3.text = "No. meals needed: " + mySchool.attendingPopulation;
+			text4.text = "No. meals stored: " + mySchool.mealsStored;
+			text5.text = "No. of Education Supplies: " + mySchool.educationSupplies;
+		}
+
 		if (currentBuilding != null) 
 		{
 			if (currentBuilding.isUpgradable) 
@@ -206,6 +213,8 @@ public class InputScript : MonoBehaviour
 				upgradeButton.interactable = false;
 			}
 		}
+
+		text6.text = "Upgrade Available?  " + currentBuilding.isUpgradable.ToString();
 	}
 	
 	public void ResetCamPosition ()

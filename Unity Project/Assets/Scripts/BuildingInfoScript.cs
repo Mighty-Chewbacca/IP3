@@ -9,6 +9,7 @@ public class BuildingInfoScript : MonoBehaviour
 	public bool isUpgradable = false;
 
 	private KidScript myKid;
+	private SchoolScript mySchool;
 	private ModelChangerScript myModelChanger;
 	private HouseControllerScript houseController;
 
@@ -23,6 +24,7 @@ public class BuildingInfoScript : MonoBehaviour
 		myKid = GetComponent<KidScript> ();
 		myModelChanger = GetComponent<ModelChangerScript>();
 		houseController = GameObject.Find ("Houses").GetComponent<HouseControllerScript>();
+		mySchool = GameObject.Find ("School").GetComponent<SchoolScript>();
 		upgradeableIcon = transform.Find ("upgradeIcon").gameObject;
 		myIconRenderer = upgradeableIcon.GetComponent<SpriteRenderer>();
 		myUpgradeHalo = upgradeableIcon.GetComponent("Halo");
@@ -41,13 +43,23 @@ public class BuildingInfoScript : MonoBehaviour
 
 	public void CheckIfCanUpgrade ()
 	{
+		int currentUpgradeCost = 0;
+
 		if (myModelChanger.gameObject.tag == "Housing") 
 		{
-			if (houseController.CheckHighestUpgrade () > myModelChanger.getHouseLevel () || houseController.CheckLowestUpgrade () == myModelChanger.getHouseLevel ()) 
+
+			if(myModelChanger.getHouseLevel() == 1)
+				currentUpgradeCost = StaticValuesScript.level1UpgradeCost;
+			else if(myModelChanger.getHouseLevel() == 2)
+				currentUpgradeCost = StaticValuesScript.level2UpgradeCost;
+			else{currentUpgradeCost = 5000;} // stop them upgrading past 3
+
+			if ((houseController.CheckHighestUpgrade () > myModelChanger.getHouseLevel () || houseController.CheckLowestUpgrade () == myModelChanger.getHouseLevel ())
+			    && myKid.goingToSchool == true && mySchool.educationSupplies >= currentUpgradeCost) 
 			{	
-				isUpgradable = true;
-				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);
-				myIconRenderer.enabled = true;
+					isUpgradable = true;
+					myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);
+					myIconRenderer.enabled = true;
 			} 
 			else 
 			{
@@ -59,7 +71,13 @@ public class BuildingInfoScript : MonoBehaviour
 		}
 		else
 		{
-			if (houseController.CheckLowestUpgrade() > myModelChanger.getHouseLevel())
+			if(myModelChanger.getHouseLevel() == 1)
+				currentUpgradeCost = StaticValuesScript.level2UpgradeCost;
+			else if(myModelChanger.getHouseLevel() == 2)
+				currentUpgradeCost = StaticValuesScript.level3UpgradeCost;
+			else{currentUpgradeCost = 5000;} // stop them upgrading past 3
+
+			if (houseController.CheckLowestUpgrade() > myModelChanger.getHouseLevel() && mySchool.educationSupplies >= currentUpgradeCost && mySchool.eligableForNewPupil == true)
 			{
 				isUpgradable = true;
 				myUpgradeHalo.GetType ().GetProperty ("enabled").SetValue (myUpgradeHalo, true, null);

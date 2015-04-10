@@ -31,6 +31,8 @@ public class StaticValuesScript : MonoBehaviour
 
 	public static string currentTimeSpeed;
 
+	public static int level1UpgradeCost, level2UpgradeCost, level3UpgradeCost;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -53,11 +55,12 @@ public class StaticValuesScript : MonoBehaviour
 		smallFoodCost = 150; smallFoodValue = 1; smallFoodTime = 10;
 		medFoodCost = 250; medFoodValue = 2; medFoodTime = 10;
 		largeFoodCost = 400; largeFoodValue = 3; largeFoodTime = 10;
-
 		educationSuppliesCost = 250; educationSuppliesValue = 5; educationSuppliesTime = 10;
 
+		// costs to upgrade
+		level1UpgradeCost = 1; level2UpgradeCost = 5; level3UpgradeCost = 10;
 
-
+		//need to initialise these or it wont work
 		currentFundraising = "temp";
 		currentDonation = "temp";
 		currentTimeSpeed = "Normal";

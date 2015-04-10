@@ -9,9 +9,9 @@ public class SchoolScript : MonoBehaviour
 	public int attendingPopulation, nonAttendingPopulation;
 	private int mealsNeeded;
 	public int mealsStored;
-	public int drinksStored;
-	private int drinksNeeded;
 	public bool eligableForNewPupil = true;
+
+	public int educationSupplies;
 
 	private int currentTick, desiredTickWeek, desiredTickDay;
 
@@ -67,7 +67,6 @@ public class SchoolScript : MonoBehaviour
 		}
 
 		mealsNeeded = attendingPopulation;
-		drinksNeeded = attendingPopulation;
 		// if a week has passed then check if we need to enrol another kid, 672 ticks in a week
 		// check for the correct amount of meals every 24 hours - 96 ticks!
 

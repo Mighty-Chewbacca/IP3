@@ -17,6 +17,6 @@ public class QuitToMenuScript : MonoBehaviour {
 
 	public void QuitToMenu()
 	{
-		Application.LoadLevel (0);
+		Application.Quit ();
 	}
 }

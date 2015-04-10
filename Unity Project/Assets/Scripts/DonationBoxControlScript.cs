@@ -9,7 +9,7 @@ public class DonationBoxControlScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		nameText = GameObject.Find ("fundraisingNameText").GetComponent<Text>();
+		nameText = GameObject.Find ("aidNameText").GetComponent<Text>();
 		valueText = GameObject.Find ("fundraisingValueText").GetComponent<Text>();
 		descText = GameObject.Find ("fundraisingDescriptionText").GetComponent<Text>();
 		timeText = GameObject.Find ("fundraisingTimeText").GetComponent<Text>();

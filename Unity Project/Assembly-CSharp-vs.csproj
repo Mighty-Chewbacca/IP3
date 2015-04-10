@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CurrentDonationActivity.cs" />
+     <Compile Include="Assets\QuitToMenuScript.cs" />
      <Compile Include="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" />
      <Compile Include="Assets\Scripts\AddDonations.cs" />
      <Compile Include="Assets\Scripts\AddFood.cs" />

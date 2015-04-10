@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CurrentDonationActivityScript : MonoBehaviour 
+public class CurrentDonationActivity : MonoBehaviour 
 {
 	//there will only be one of these available at once
 	//it will be the current fundraising activity and will control all sorts to do with that!

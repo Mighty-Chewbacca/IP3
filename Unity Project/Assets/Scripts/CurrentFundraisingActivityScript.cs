@@ -45,10 +45,13 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 
 	public void activateFundraising()
 	{
-		ValuesScript.donations -= cost;
-		CalculateDesiredTick ();
-		isActive = true;
-		StaticValuesScript.isFundraisingActive = true;
+		if (ValuesScript.donations >= cost)
+		{
+			ValuesScript.donations -= cost;
+			CalculateDesiredTick ();
+			isActive = true;
+			StaticValuesScript.isFundraisingActive = true;
+		}
 	}
 
 	private void CalculateDesiredTick()

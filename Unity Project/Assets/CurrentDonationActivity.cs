@@ -12,6 +12,7 @@ public class CurrentDonationActivityScript : MonoBehaviour
 	private int timeToCompleteActivity;
 	private int desiredTick;
 	private int payout;
+	private int cost;
 	private SchoolScript mySchool;
 	
 	// Use this for initialization
@@ -46,10 +47,13 @@ public class CurrentDonationActivityScript : MonoBehaviour
 	
 	public void activateFundraising()
 	{
-		ValuesScript.donations -= 1000;
-		CalculateDesiredTick ();
-		isActive = true;
-		StaticValuesScript.isDonationActive = true;
+		if (ValuesScript.donations >= cost)
+		{
+			ValuesScript.donations -= cost;
+			CalculateDesiredTick ();
+			isActive = true;
+			StaticValuesScript.isDonationActive = true;
+		}
 	}
 	
 	private void CalculateDesiredTick()
@@ -71,24 +75,28 @@ public class CurrentDonationActivityScript : MonoBehaviour
 		{
 			timeToCompleteActivity = StaticValuesScript.smallFoodTime;
 			payout = StaticValuesScript.smallFoodValue;
+			cost = StaticValuesScript.smallFoodCost;
 		}
 
 		if (StaticValuesScript.currentFundraising == "MediumFood")
 		{
 			timeToCompleteActivity = StaticValuesScript.medFoodTime;
 			payout = StaticValuesScript.medFoodValue;
+			cost = StaticValuesScript.medFoodCost;
 		}
 
 		if (StaticValuesScript.currentFundraising == "LargeFood")
 		{
 			timeToCompleteActivity = StaticValuesScript.largeFoodTime;
 			payout = StaticValuesScript.largeFoodValue;
+			cost = StaticValuesScript.largeFoodCost;
 		}
 
 		if (StaticValuesScript.currentFundraising == "EducationSupplies")
 		{
 			timeToCompleteActivity = StaticValuesScript.educationSuppliesTime;
 			payout = StaticValuesScript.educationSuppliesValue;
+			cost = StaticValuesScript.educationSuppliesCost;
 		}
 
 	}

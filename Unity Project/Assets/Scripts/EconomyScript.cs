@@ -97,6 +97,7 @@ public class EconomyScript : MonoBehaviour
 
 	public void setFastTime()
 	{
+		StartCoroutine(PlayButtonClick());
 		currentDelayTime = fastDelayTime;
 		delayTime = currentDelayTime;
 		StaticValuesScript.currentTimeSpeed = "Fast";
@@ -114,6 +115,12 @@ public class EconomyScript : MonoBehaviour
 		currentDelayTime = normalDelayTime;
 		delayTime = currentDelayTime;
 		StaticValuesScript.currentTimeSpeed = "Normal";
+	}
+
+	IEnumerator PlayButtonClick()
+	{
+		audio.Play();
+		yield return new WaitForSeconds(audio.clip.length);
 	}
 
 	#region get minutes hours and days

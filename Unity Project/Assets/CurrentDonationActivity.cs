@@ -47,12 +47,16 @@ public class CurrentDonationActivity : MonoBehaviour
 	
 	public void activateFundraising()
 	{
-		if (ValuesScript.donations >= cost)
+		if (ValuesScript.donations >= cost && isActive == false)
 		{
 			ValuesScript.donations -= cost;
 			CalculateDesiredTick ();
 			isActive = true;
 			StaticValuesScript.isDonationActive = true;
+		}
+		else
+		{
+			Debug.Log("couldnt buy, not enough money or was true");
 		}
 	}
 	
@@ -71,28 +75,28 @@ public class CurrentDonationActivity : MonoBehaviour
 		{
 			Debug.Log("the fundraising is null");
 		}
-		if (StaticValuesScript.currentFundraising == "SmallFood")
+		if (StaticValuesScript.currentDonation == "SmallFood")
 		{
 			timeToCompleteActivity = StaticValuesScript.smallFoodTime;
 			payout = StaticValuesScript.smallFoodValue;
 			cost = StaticValuesScript.smallFoodCost;
 		}
 
-		if (StaticValuesScript.currentFundraising == "MediumFood")
+		if (StaticValuesScript.currentDonation == "MediumFood")
 		{
 			timeToCompleteActivity = StaticValuesScript.medFoodTime;
 			payout = StaticValuesScript.medFoodValue;
 			cost = StaticValuesScript.medFoodCost;
 		}
 
-		if (StaticValuesScript.currentFundraising == "LargeFood")
+		if (StaticValuesScript.currentDonation == "LargeFood")
 		{
 			timeToCompleteActivity = StaticValuesScript.largeFoodTime;
 			payout = StaticValuesScript.largeFoodValue;
 			cost = StaticValuesScript.largeFoodCost;
 		}
 
-		if (StaticValuesScript.currentFundraising == "EducationSupplies")
+		if (StaticValuesScript.currentDonation == "EducationSupplies")
 		{
 			timeToCompleteActivity = StaticValuesScript.educationSuppliesTime;
 			payout = StaticValuesScript.educationSuppliesValue;

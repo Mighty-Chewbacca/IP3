@@ -45,7 +45,7 @@ public class CurrentFundraisingActivityScript : MonoBehaviour
 
 	public void activateFundraising()
 	{
-		if (ValuesScript.donations >= cost)
+		if (ValuesScript.donations >= cost && isActive == false)
 		{
 			ValuesScript.donations -= cost;
 			CalculateDesiredTick ();

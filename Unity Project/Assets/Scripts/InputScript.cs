@@ -183,6 +183,15 @@ public class InputScript : MonoBehaviour
 			{
 				text3.text = "Not Currently Fundraising:";
 			}
+
+			if (StaticValuesScript.isDonationActive) 
+			{
+				text4.text = "Currently Donating:" + StaticValuesScript.currentDonation;
+			}
+			if (!StaticValuesScript.isDonationActive) 
+			{
+				text4.text = "Not Currently Donating:";
+			}
 			
 		}
 

@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainGameUIScript.cs">
     <Files>
-      <File FileName="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" Line="32" Column="37" />
-      <File FileName="Assets\Scripts\BuildingInfoScript.cs" Line="62" Column="36" />
-      <File FileName="Assets\Scripts\MainGameUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MainGameUIScript.cs" Line="21" Column="38" />
+      <File FileName="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BuildingInfoScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InputScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\DonationBoxControlScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CurrentFundraisingActivityScript.cs" Line="1" Column="1" />

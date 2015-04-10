@@ -37,9 +37,9 @@ public class InputScript : MonoBehaviour
 		upgradeButton = GameObject.Find ("upgradeButton").GetComponent<Button> ();
 		story1Button = GameObject.Find ("story1Button").GetComponent<Button> ();
 		story2Button = GameObject.Find ("story2Button").GetComponent<Button> ();
-
-		story1Button.interactable = false;
-		story2Button.interactable = false;
+//
+//		story1Button.interactable = false;
+//		story2Button.interactable = false;
 
 		text1 = GameObject.Find ("buildingTB1").GetComponent<Text> ();
 		text2 = GameObject.Find ("buildingTB2").GetComponent<Text> ();

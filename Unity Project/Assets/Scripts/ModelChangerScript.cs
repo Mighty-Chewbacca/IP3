@@ -13,6 +13,14 @@ public class ModelChangerScript : MonoBehaviour
 	private bool isAbleToUpgrade = false;
 	private MainGameUIScript mainUIController;
 
+	public AudioClip dingSound;
+
+	IEnumerator PlayDingSound()
+	{
+		audio.Play();
+		yield return new WaitForSeconds(audio.clip.length);
+	}
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -37,6 +45,7 @@ public class ModelChangerScript : MonoBehaviour
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level1UpgradeCost;
 
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier2"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -54,6 +63,7 @@ public class ModelChangerScript : MonoBehaviour
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level2UpgradeCost;
 
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/SchoolTier2"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -79,7 +89,8 @@ public class ModelChangerScript : MonoBehaviour
 					if (gameObject.tag == "well")
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level2UpgradeCost;
-						
+
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/WellTier2"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -102,6 +113,7 @@ public class ModelChangerScript : MonoBehaviour
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level2UpgradeCost;
 
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/ChurchTier2"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -125,7 +137,8 @@ public class ModelChangerScript : MonoBehaviour
 					if (gameObject.tag == "Housing")
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level2UpgradeCost;
-						
+
+						StartCoroutine(PlayDingSound());
 					GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/HouseTier3"));
 					go.transform.position = this.transform.position;
 					go.transform.parent = this.transform;
@@ -147,7 +160,8 @@ public class ModelChangerScript : MonoBehaviour
 					if (gameObject.tag == "School")
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level3UpgradeCost;
-						
+
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/SchoolTier3"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -173,7 +187,8 @@ public class ModelChangerScript : MonoBehaviour
 					if (gameObject.tag == "well")
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level3UpgradeCost;
-						
+
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/WellTier3"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;
@@ -196,7 +211,8 @@ public class ModelChangerScript : MonoBehaviour
 					if (gameObject.tag == "church")
 					{
 						mySchool.educationSupplies -= StaticValuesScript.level3UpgradeCost;
-						
+
+						StartCoroutine(PlayDingSound());
 						GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/ChurchTier3"));
 						go.transform.position = this.transform.position;
 						go.transform.parent = this.transform;

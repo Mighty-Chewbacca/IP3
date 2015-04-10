@@ -1,15 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CurrentFundraisingActivityScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\BuildingInfoScript.cs" Line="62" Column="46" />
+      <File FileName="Assets\Scenes\Main Menu Scene\StartMenuUIScript.cs" Line="32" Column="37" />
+      <File FileName="Assets\Scripts\BuildingInfoScript.cs" Line="62" Column="36" />
       <File FileName="Assets\Scripts\MainGameUIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InputScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DonationBoxControlScript.cs" Line="27" Column="20" />
-      <File FileName="Assets\Scripts\CurrentFundraisingActivityScript.cs" Line="38" Column="27" />
-      <File FileName="Assets\Scripts\StaticValuesScript.cs" Line="50" Column="75" />
-      <File FileName="Assets\Scripts\FundraisingBoxControlScript.cs" Line="13" Column="45" />
-      <File FileName="Assets\CurrentDonationActivity.cs" Line="55" Column="47" />
+      <File FileName="Assets\Scripts\DonationBoxControlScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CurrentFundraisingActivityScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StaticValuesScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FundraisingBoxControlScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\CurrentDonationActivity.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MenuScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

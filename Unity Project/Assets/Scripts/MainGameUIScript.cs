@@ -13,6 +13,7 @@ public class MainGameUIScript : MonoBehaviour {
 	public Animator aidSelectionBox;
 	public Animator story1Animator;
 	public Animator story2Animator;
+	public Animator helpAnimator;
 
 	public void openFundraising()
 	{
@@ -170,6 +171,21 @@ public class MainGameUIScript : MonoBehaviour {
 		}
 	}
 
+	public void openHelp()
+	{
+		StartCoroutine(PlayButtonClick());
+		helpAnimator.enabled = true;
+		helpAnimator.SetBool("isHidden", false);
+		//Debug.Log("Donation Menu Box is Open");
+	}
+	
+	public void closeHelp()
+	{
+		StartCoroutine(PlayButtonClick());
+		helpAnimator.SetBool("isHidden", true);
+		//Debug.Log("Donation Menu Box is Closed");
+	}
+
 	IEnumerator PlayButtonClick()
 	{
 		audio.Play();
@@ -182,5 +198,6 @@ public class MainGameUIScript : MonoBehaviour {
 		Vector2 position = transform.anchoredPosition;
 		position.y -= transform.rect.height;
 		transform.anchoredPosition = position;
+		openHelp ();
 	}	
 }
